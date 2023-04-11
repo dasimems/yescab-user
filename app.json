@@ -26,14 +26,12 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#E5ECFF"
       },
-      "permission": [
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO",
         "CAMERA",
         "READ_EXTERNAL_STORAGE",
         "WRITE_EXTERNAL_STORAGE"
-      ],
-      "permissions": [
-        "android.permission.CAMERA",
-        "android.permission.RECORD_AUDIO"
       ]
     },
     "web": {
