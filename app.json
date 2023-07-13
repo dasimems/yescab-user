@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Paxi",
-    "slug": "Paxi",
+    "name": "YesCab",
+    "slug": "YesCab",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -16,11 +16,11 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.dasimems.paxi",
+      "bundleIdentifier": "com.yesCab.driver",
       "buildNumber": "1.0.0"
     },
     "android": {
-      "package": "com.dasimems.paxi",
+      "package": "com.yesCab.driver",
       "versionCode": 1,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
@@ -47,9 +47,7 @@
       ]
     ],
     "extra": {
-      "eas": {
-        "projectId": "4e195540-0afa-4031-8833-8750140450d2"
-      }
+      
     }
   }
 }

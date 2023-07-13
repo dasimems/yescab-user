@@ -1,14 +1,14 @@
 export const primaryColor = {
-    default: "rgb(65, 105, 225)",
-    opacity100: "rgba(65, 105, 225, .1)",
-    opacity200: "rgba(65, 105, 225, .2)",
-    opacity300: "rgba(65, 105, 225, .3)",
-    opacity400: "rgba(65, 105, 225, .4)",
-    opacity500: "rgba(65, 105, 225, .5)",
-    opacity600: "rgba(65, 105, 225, .6)",
-    opacity700: "rgba(65, 105, 225, .7)",
-    opacity800: "rgba(65, 105, 225, .8)",
-    opacity900: "rgba(65, 105, 225, .9)",
+    default: "rgb(13, 9, 255)",
+    opacity100: "rgba(13, 9, 255, .1)",
+    opacity200: "rgba(13, 9, 255, .2)",
+    opacity300: "rgba(13, 9, 255, .3)",
+    opacity400: "rgba(13, 9, 255, .4)",
+    opacity500: "rgba(13, 9, 255, .5)",
+    opacity600: "rgba(13, 9, 255, .6)",
+    opacity700: "rgba(13, 9, 255, .7)",
+    opacity800: "rgba(13, 9, 255, .8)",
+    opacity900: "rgba(13, 9, 255, .9)",
 }
 
 export const whiteColor = {
@@ -66,17 +66,44 @@ export const successColor = {
 }
 
 export const secondaryColor = {
-    default: "rgb(226, 232, 240)",
-    opacity100: "rgba(226, 232, 240, .1)",
-    opacity200: "rgba(226, 232, 240, .2)",
-    opacity300: "rgba(226, 232, 240, .3)",
-    opacity400: "rgba(226, 232, 240, .4)",
-    opacity500: "rgba(226, 232, 240, .5)",
-    opacity600: "rgba(226, 232, 240, .6)",
-    opacity700: "rgba(226, 232, 240, .7)",
-    opacity800: "rgba(226, 232, 240, .8)",
-    opacity900: "rgba(226, 232, 240, .9)",
+    default: "rgb(182, 211, 255)",
+    opacity100: "rgba(182, 211, 255, .1)",
+    opacity200: "rgba(182, 211, 255, .2)",
+    opacity300: "rgba(182, 211, 255, .3)",
+    opacity400: "rgba(182, 211, 255, .4)",
+    opacity500: "rgba(182, 211, 255, .5)",
+    opacity600: "rgba(182, 211, 255, .6)",
+    opacity700: "rgba(182, 211, 255, .7)",
+    opacity800: "rgba(182, 211, 255, .8)",
+    opacity900: "rgba(182, 211, 255, .9)",
     
+    light: {
+        default: "rgb(202, 227, 255)",
+        opacity100: "rgba(202, 227, 255, .1)",
+        opacity200: "rgba(202, 227, 255, .2)",
+        opacity300: "rgba(202, 227, 255, .3)",
+        opacity400: "rgba(202, 227, 255, .4)",
+        opacity500: "rgba(202, 227, 255, .5)",
+        opacity600: "rgba(202, 227, 255, .6)",
+        opacity700: "rgba(202, 227, 255, .7)",
+        opacity800: "rgba(202, 227, 255, .8)",
+        opacity900: "rgba(202, 227, 255, .9)",
+        
+        
+    },
+    lighter: {
+        default: "rgb(220, 238, 255)",
+        opacity100: "rgba(220, 238, 255, .1)",
+        opacity200: "rgba(220, 238, 255, .2)",
+        opacity300: "rgba(220, 238, 255, .3)",
+        opacity400: "rgba(220, 238, 255, .4)",
+        opacity500: "rgba(220, 238, 255, .5)",
+        opacity600: "rgba(220, 238, 255, .6)",
+        opacity700: "rgba(220, 238, 255, .7)",
+        opacity800: "rgba(220, 238, 255, .8)",
+        opacity900: "rgba(220, 238, 255, .9)",
+
+    }
 }
 
 export const infoColor = {

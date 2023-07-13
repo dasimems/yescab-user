@@ -1,6 +1,7 @@
 import MessageCard from "./chatDetails/MessageCard"
 import ChatCard from "./chats/ChatCard"
 import ChatOptions from "./chats/ChatOptions"
+import AppContainer from "./general/AppContainer"
 import Button from "./general/Button"
 import CameraContainer from "./general/Camera"
 import CountryFlag from "./general/CountryFlag"
@@ -15,6 +16,7 @@ import Nav from "./general/Nav"
 import Providers from "./general/Providers"
 import RoundedImage from "./general/RoundedImage"
 import ScreenContainer from "./general/ScreenContainer"
+import GettingStartedFooter from "./getting-started/GettingStartedFooter"
 import Map from "./navigation/Map"
 import TripCard from "./trips/TripCard"
 import TripFilter from "./trips/TripFilter"
@@ -39,5 +41,8 @@ export {
     Modal,
     CountryList,
     ChatOptions,
-    CameraContainer
+    CameraContainer,
+    GettingStartedFooter,
+    AppContainer
+
 }

@@ -1,10 +1,12 @@
-import { ScrollView, StyleSheet, Text, View } from 'react-native'
+import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
-import { Button, Logo } from '../components'
-import { blackColor, primaryColor, whiteColor } from '../assets/colors'
+import { Button, GettingStartedFooter, Logo } from '../components'
+import { blackColor, primaryColor, secondaryColor, whiteColor } from '../assets/colors'
 import { lato } from '../fonts'
 import { useNavigation } from '@react-navigation/native'
 import { NavNames } from '../data/general'
+import { ArrowRight } from '../assets/icons'
+import { OnboardingBackgroundOne, OnboardingOneImage } from '../assets/images'
 
 const GettingStarted = () => {
     
@@ -12,56 +14,75 @@ const GettingStarted = () => {
   return (
     <View style={{
         flex: 1,
-        alignItems: "center",
-        padding: 20,
         backgroundColor: whiteColor.default
     }}>
 
+    <Image source={OnboardingBackgroundOne} style={{
+      height: "100%",
+      resizeMode: "contain",
+      width: '100%',
+      position: "absolute"
+
+    }} />
+
         <View style={{
-            flex: 1
+            flex: 1,
+            position: "relative",
+            justifyContent: "flex-end",
+            alignItems: "center",
+            gap: 40
+        }}> 
+
+        <Image source={OnboardingOneImage} style={{
+          flex: 1/1.5,
+          resizeMode: "contain"
+
+        }} />
+
+        <Text style={{
+          color: primaryColor.default,
+          fontFamily: lato.bold.default,
+          maxWidth: 280,
+          textAlign: "center",
+          fontSize: 25
+        }}>Make money when you drive</Text>
+        <Text style={{
+          color: blackColor.opacity500,
+          fontFamily: lato.regular.default,
+          maxWidth: 250,
+          textAlign: "center",
+          fontSize: 15
+        }}>Making money for driving just got easier and better</Text>
+
+        <View style={{
+          flexDirection: "row",
+          alignItems: "center",
+          justifyContent: "center",
+          gap: 10
         }}>
 
-            <ScrollView contentContainerStyle={{
-                flex: 1,
-                alignItems: "center",
-                gap: 50,
-                justifyContent: "space-between"
-            }}>
+          <View style={{
+            width: 10,
+            height: 10,
+            backgroundColor: primaryColor.default,
+            borderRadius: 100,
 
+          }}></View>
 
-                <Logo />
-                <Logo image />
+          <View style={{
+            width: 10,
+            height: 10,
+            backgroundColor: blackColor.opacity200,
+            borderRadius: 100,
+            
+          }}></View>
 
-                <View>
-
-                <Text style={{
-                    textAlign: "center",
-                    fontFamily: lato.regular.default,
-                    fontFamily: lato.bold.default,
-                    fontSize: 29
-                }}>Lorem Ipsum is simply dummy</Text>
-                <Text style={{
-                    textAlign: "center",
-                    fontFamily: lato.regular.default,
-                    color: blackColor.opacity600,
-                    marginTop: 20,
-                    fontSize: 18
-                }}>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</Text>
-
-                </View>
-
-
-
-            </ScrollView>
+        </View>
+            
         </View>
 
 
-      <Button onPress={()=>{
-        navigate(NavNames.Login.name)
-      }} textColor={whiteColor.default} style={{
-        backgroundColor: primaryColor.default,
-        marginTop: 100
-      }} text="GET STARTED"  />
+      <GettingStartedFooter />
     </View>
   )
 }

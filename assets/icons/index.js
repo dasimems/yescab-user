@@ -26,7 +26,8 @@ import {
   StopCircle,
   Compass,
   ChevronDown,
-  RefreshCcw
+  RefreshCcw,
+  ArrowRightIcon
 } from "lucide-react-native";
 import { MaterialIcons } from "@expo/vector-icons";
 import { FontAwesome5 } from '@expo/vector-icons';
@@ -57,6 +58,10 @@ export const Dashboard = ({size, color}) => {
 
 export const ArrowLeft = ({size, color}) => {
     return <ArrowLeftIcon size={size ? size : 20} color={color ? color : blackColor.default} />;
+}
+
+export const ArrowRight = ({size, color}) => {
+    return <ArrowRightIcon size={size ? size : 20} color={color ? color : blackColor.default} />;
 }
 
 export const AngleLeft = ({size, color}) => {

@@ -1,5 +1,9 @@
+import { Dimensions } from "react-native";
 import { ChatIcon, Menu, NavigationIcon, TripsIcon, UserIcon } from "../assets/icons";
 import CountryListJson from "./all_country.json"
+
+const windowWidth = Dimensions.get("window").width;
+const windowHeight = Dimensions.get("window").height;
 
 export const NavNames = {
   GettingStarted: {
@@ -68,6 +72,10 @@ export const countryData = CountryListJson.map(country => ({name: country.name.c
 
 
 export const allNav = Object.keys(NavNames).map(nav => NavNames[nav]);
-export const screenNav = allNav.filter(nav => nav.navShown)
+export const screenNav = allNav.filter(nav => nav.navShown),
+  measurements = {
+    windowWidth,
+    windowHeight
+  }
 
 export const padding = 15;
