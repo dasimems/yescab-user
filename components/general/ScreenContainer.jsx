@@ -4,9 +4,9 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { StatusBar } from "expo-status-bar";
 import { whiteColor } from '../../assets/colors';
 
-const ScreenContainer = ({children}) => {
-  return <View style={{ flex: 1 }}>
-      <StatusBar style="auto" backgroundColor='white' />
+const ScreenContainer = ({children, style}) => {
+  return <View style={{ flex: 1, ...style }}>
+      <StatusBar style="auto" backgroundColor="white" />
 
       <SafeAreaView style={{ flex: 1 }}>
         {children}

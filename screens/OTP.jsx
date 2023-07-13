@@ -6,7 +6,7 @@ import {
   View
 } from "react-native";
 import React, { useCallback, useEffect, useRef, useState } from "react";
-import { Button, FormInputField, Logo } from "../components";
+import { Button, FormInputField, Logo, RegistrationFooter, RegistrationHeader, ScreenContainer } from "../components";
 import { blackColor, dangerColor, primaryColor, whiteColor } from "../assets/colors";
 import { lato } from "../fonts";
 import { useNavigation } from "@react-navigation/native";
@@ -91,53 +91,23 @@ const OTP = () => {
   }, [otpCodeOne, otpCodeTwo, otpCodeThree, otpCodeFour, processOtp]);
 
   return (
-    <View style={{ flex: 1, padding: 20, backgroundColor: whiteColor.default }}>
+    <ScreenContainer style={{ flex: 1, padding: 20, backgroundColor: whiteColor.default }}>
       <View style={{ flex: 1 }}>
-        <TouchableOpacity
-          onPress={() => {
-            goBack();
-          }}
-        >
-          <AngleLeft />
-        </TouchableOpacity>
+        
 
-        <ScrollView
-          contentContainerStyle={{
+        <View
+          style={{
             alignItems: "center",
             justifyContent: "space-between",
-            gap: 30
+            gap: 50
           }}
         >
-          <AnimatedLottieView
-            source={mailLottieFile}
-            autoPlay
-            loop={false}
-            style={{ maxWidth: 100, width: "100%", maxHeight: 100 }}
-          />
+          
+          <RegistrationHeader title="Verification" subTitle="Kindly enter the OTP sent to your mobile phone " />
 
-          <View style={{ gap: 6 }}>
-            <Text
-              style={{
-                fontFamily: lato.bold.default,
-                fontSize: 20,
-                textAlign: "center"
-              }}
-            >
-              Verification
-            </Text>
-
-            <Text style={{ ...styles.textStyle }}>
-              Enter verification code that sent to
-            </Text>
-            <Text style={{ ...styles.textStyle }}>
-              {" "}<Text style={{ fontFamily: lato.bold.default }}>
-                +{mobileCode} {phone}
-              </Text>{" "}
-              by SMS
-            </Text>
-          </View>
-
-          <View>
+          <View style={{
+            gap: 40
+          }}>
 
             <View style={{ flexDirection: "row", gap: 20 }}>
                 <FormInputField
@@ -288,47 +258,43 @@ const OTP = () => {
                 />
             </View>
 
-            <Text style={{
-                textAlign: "center",
-                fontFamily: lato.regular.default,
-                marginTop: 5,
-                color: error? dangerColor.opacity500 : blackColor.opacity500
-            }}>{error? "Invalid Code" : "Enter 4 digit code"}</Text>
+            <View>
+              {defaultTimer < 1
+                ? <TouchableOpacity
+                    onPress={() => {
+                      setDefaultTimer(100000);
+                    }}
+                  >
+                    <Text
+                      style={{
+                        textAlign: "center",
+                        fontFamily: lato.bold.default,
+                        color: primaryColor.opacity500,
+                      }}
+                    >
+                      Resend Code
+                    </Text>
+                  </TouchableOpacity>
+                : <Text
+                    style={{
+                      textAlign: "center",
+                      fontFamily: lato.regular.default,
+                      color: blackColor.opacity700
+                    }}
+                  >
+                    Resend Code in ({formatSeconds(defaultTimer)})
+                  </Text>}
+            </View>
 
           </View>
 
-        </ScrollView>
+        </View>
       </View>
 
-      <View>
-        {defaultTimer < 1
-          ? <TouchableOpacity
-              onPress={() => {
-                setDefaultTimer(100000);
-              }}
-            >
-              <Text
-                style={{
-                  textAlign: "center",
-                  fontFamily: lato.bold.default,
-                  color: primaryColor.opacity700,
-                  fontSize: 17
-                }}
-              >
-                Resend Code
-              </Text>
-            </TouchableOpacity>
-          : <Text
-              style={{
-                textAlign: "center",
-                fontFamily: lato.regular.default,
-                color: blackColor.opacity700
-              }}
-            >
-              Resend Code in ({formatSeconds(defaultTimer)})
-            </Text>}
-      </View>
-    </View>
+      <RegistrationFooter />
+
+      
+    </ScreenContainer>
   );
 };
 
@@ -344,12 +310,15 @@ const styles = StyleSheet.create({
 
   inputStyle: {
     width: 50,
-    backgroundColor: "rgba(0, 0, 0, .04)",
+    backgroundColor: "transparent",
     borderRadius: 10
   },
 
   inputFieldStyle: {
     textAlign: "center",
-    borderWidth: 0
+    borderWidth: 0,
+    borderBottomWidth: 2,
+    borderRadius: 0,
+    borderColor: blackColor.opacity400
   }
 });

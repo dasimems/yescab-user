@@ -18,6 +18,7 @@ import RoundedImage from "./general/RoundedImage"
 import ScreenContainer from "./general/ScreenContainer"
 import GettingStartedFooter from "./getting-started/GettingStartedFooter"
 import RegistrationFooter from "./getting-started/RegistrationFooter"
+import RegistrationHeader from "./getting-started/RegistrationHeader"
 import Map from "./navigation/Map"
 import TripCard from "./trips/TripCard"
 import TripFilter from "./trips/TripFilter"
@@ -45,6 +46,7 @@ export {
     CameraContainer,
     GettingStartedFooter,
     AppContainer,
-    RegistrationFooter
+    RegistrationFooter,
+    RegistrationHeader
 
 }

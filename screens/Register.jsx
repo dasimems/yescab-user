@@ -175,7 +175,7 @@ const Register = () => {
 
         </View>
 
-        <RegistrationFooter />
+        <RegistrationFooter next={NavNames.Login.name} />
 
       </ScrollView>
 

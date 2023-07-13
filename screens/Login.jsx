@@ -1,12 +1,13 @@
 import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React, { useCallback } from "react";
-import { Button, CountryList, CountrySelectDetails, FormInputField, Logo2 } from "../components";
+import { Button, CountryList, CountrySelectDetails, FormInputField, Logo2, RegistrationFooter, RegistrationHeader, ScreenContainer } from "../components";
 import { blackColor, primaryColor, whiteColor } from "../assets/colors";
 import { lato } from "../fonts";
 import { useNavigation } from "@react-navigation/native";
 import allStyles from "../assets/stylesheet";
 import { useActionContext, useFormContext } from "../context";
 import { NavNames } from "../data/general";
+import { Call } from "react-native-iconly";
 
 const Login = () => {
     const {navigate} = useNavigation();
@@ -19,7 +20,7 @@ const Login = () => {
     }, [])
 
   return (
-    <View
+    <ScreenContainer
       style={{
         flex: 1,
         alignItems: "center",
@@ -27,100 +28,61 @@ const Login = () => {
         backgroundColor: whiteColor.default
       }}
     >
-      <View
-        style={{
-          flex: 1
-        }}
-      >
-        <ScrollView
-          contentContainerStyle={{
-            alignItems: "center",
-            gap: 50,
-            justifyContent: "space-between"
-          }}
-        >
 
-            <Logo2 />
-
-            <View>
-                <Text style={{
-                    textAlign: "center",
-                    fontSize: 25,
-                    fontFamily: lato.bold.default
-                }}>Login to your account</Text>
-                <Text style={{
-                    textAlign: "center",
-                    fontSize: 17,
-                    marginTop: 20,
-                    fontFamily: lato.regular.default,
-                    color: blackColor.opacity700
-                }}>Welcome back to <Text style={{
-                    fontFamily: lato.bold.default
-                }}>PAXI</Text>, enter your details below to continue.</Text>
-            </View>
-
-            <View style={{
-                width: "100%"
-            }}>
-                <FormInputField  inputMode="numeric"  keyboardType="phone-pad" onChangeText={(text)=>{
-                    setPhoneNumber(text);
-                }} value={phone} floatLeftIcon={<CountrySelectDetails />} leftIconAction={()=>{
-                  showCountryList();
-
-                }} placeholder="Enter your phone number" inputStyle={{
-                    ...inputStyle,
-                    borderWidth: 0 
-                }} label="Enter your phone" labelStyle={{
-                    fontFamily: lato.bold.default,
-                    marginBottom: 5
-                }} />
-            </View>
-          
-          
-
-        </ScrollView>
-      </View>
-
-      <Button
-        disabled={phone.length < 9}
-        onPress={()=>{
-            navigate(NavNames.OTP.name)
-        }}
-        textColor={whiteColor.default}
-        style={{
-          backgroundColor: primaryColor.default,
-          marginTop: 100
-        }}
-        text="CONTINUE"
-      />
-
-      {/* <View style={{
-        alignItems: "center",
-        paddingTop: 20,
-        paddingBottom: 5,
-        flexDirection: "row",
-        gap: 5
+      <View style={{
+        flex: 1,
+        gap: 50
       }}>
-        <Text style={{
-          fontFamily: lato.bold.default,
-          color: blackColor.opacity600
-        }}>Don't have an account? </Text>
 
-        <TouchableOpacity onPress={()=>{
-          navigate(NavNames.Register.name)
+        <RegistrationHeader title="Authentication" subTitle="Enter your number below. A code will be sent for verification." />
+
+        <View style={{
+            ...styles.formParentStyle
         }}>
 
-          <Text style={{
-            fontFamily: lato.bold.default,
-            color: primaryColor.default
-          }}>Register</Text>
+            <FormInputField placeholder="Mobile Number" inputStyle={{
+                ...styles.inputStyle
+                
+            }} inputParentStyle={{
+                ...styles.inputParentStyle
+            }} style={{
+                ...styles.formStyle
 
-        </TouchableOpacity>
-      </View> */}
-    </View>
+            }} floatLeftIcon={<Call color={primaryColor.default } />} />
+        </View>
+
+
+      </View>
+      
+
+      <RegistrationFooter next={NavNames.OTP.name} />
+
+      
+    </ScreenContainer>
   );
 };
 
 export default Login;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  formParentStyle: {
+    backgroundColor: "rgba(0, 0, 0, .07)",
+    borderRadius: 11,
+    alignItems: "center",
+    justifyContent: "center",
+    height: 60
+  },
+  formStyle: {
+    width: "99%",
+    height: "97%"
+  },
+  inputStyle: {
+    borderWidth: 0,
+    paddingLeft: 50,
+    backgroundColor: whiteColor.default
+  },
+  inputParentStyle: {
+    width: "100%",
+    height: "100%"
+  }
+});
