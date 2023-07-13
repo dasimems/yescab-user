@@ -45,7 +45,7 @@ const AddProfilePicture = () => {
       }}
     >
 
-        <ScrollView contentContainerStyle={{
+        <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{
             minHeight: "100%"
         }}>
             <View
@@ -60,7 +60,7 @@ const AddProfilePicture = () => {
                 />
 
                 <View style={{
-                    flex: 1,
+                    flex: 0.9,
                     alignItems: "center",
                     justifyContent: "center",
                     gap: 20
