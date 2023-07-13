@@ -27,6 +27,7 @@ const FormInputField = React.forwardRef(({
   leftIconAction,
   removePlaceholder,
   disableKeyboardAutoHide,
+  inputParentStyle,
   ...props
 }, ref) => {
 
@@ -34,7 +35,7 @@ const FormInputField = React.forwardRef(({
   const [rightIconStyle, setRightIconStyle] = useState(15)
  
   return (
-    <View style={{ ...style }}>
+    <View style={{ gap: 20, ...style }}>
       {label &&
         <Text
           style={{
@@ -49,9 +50,9 @@ const FormInputField = React.forwardRef(({
 
       <View
         style={{
-            marginTop: 7,
             flexDirection: "row",
-            overflow: "hidden"
+            overflow: "hidden",
+            ...inputParentStyle
         }}
       >
 

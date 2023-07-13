@@ -17,6 +17,7 @@ import Providers from "./general/Providers"
 import RoundedImage from "./general/RoundedImage"
 import ScreenContainer from "./general/ScreenContainer"
 import GettingStartedFooter from "./getting-started/GettingStartedFooter"
+import RegistrationFooter from "./getting-started/RegistrationFooter"
 import Map from "./navigation/Map"
 import TripCard from "./trips/TripCard"
 import TripFilter from "./trips/TripFilter"
@@ -43,6 +44,7 @@ export {
     ChatOptions,
     CameraContainer,
     GettingStartedFooter,
-    AppContainer
+    AppContainer,
+    RegistrationFooter
 
 }

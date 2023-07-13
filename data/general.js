@@ -12,6 +12,18 @@ export const NavNames = {
     navShown: false,
     Icon: Menu
   },
+  GettingStarted2: {
+    name: "GettingStarted2",
+    label: "Getting Started",
+    navShown: false,
+    Icon: Menu
+  },
+  Signup: {
+    name: "SignUp",
+    label: "Sign Up",
+    navShown: false,
+    Icon: Menu
+  },
 
   Login: {
     name: "Login",

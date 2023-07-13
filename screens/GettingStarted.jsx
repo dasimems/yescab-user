@@ -30,7 +30,8 @@ const GettingStarted = () => {
             position: "relative",
             justifyContent: "flex-end",
             alignItems: "center",
-            gap: 40
+            gap: 40,
+            paddingHorizontal: 20
         }}> 
 
         <Image source={OnboardingOneImage} style={{

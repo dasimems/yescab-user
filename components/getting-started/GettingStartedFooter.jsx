@@ -3,31 +3,52 @@ import { lato } from "../../fonts";
 import { primaryColor, whiteColor } from "../../assets/colors";
 import { ArrowRight } from "../../assets/icons";
 import Button from "../general/Button";
-import { measurements } from "../../data/general";
+import { NavNames, measurements } from "../../data/general";
+import { useNavigation, useRoute } from "@react-navigation/native";
 
 
 
 const GettingStartedFooter = () => {
+
+    const {name} = useRoute()
+    const {navigate} = useNavigation();
+
+    function checkIfGettingStartedOne(){
+        return name === NavNames.GettingStarted.name;
+    }
+
     return(
 
         <View style={{
         width: "100%",
-        paddingVertical: measurements.windowWidth * 0.35    ,
+        paddingVertical: checkIfGettingStartedOne()? measurements.windowWidth * 0.35 :  measurements.windowWidth * 0.1   ,
         paddingBottom: measurements.windowWidth * 0.1,
         paddingHorizontal: 30,
         flexDirection: "row",
         justifyContent: "space-between",
-        alignItems: "center"
+        alignItems: "center",
 
       }}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={()=>{
+            
+                navigate(NavNames.Register.name);
+        }}>
           <Text style={{
             fontFamily: lato.regular.default,
             color: primaryColor.opacity500
           }}>Skip</Text>
         </TouchableOpacity>
 
-        <Button style={{
+        <Button onPress={()=>{
+
+            if(checkIfGettingStartedOne()){
+                navigate(NavNames.GettingStarted2.name);
+                
+            }else{
+
+                navigate(NavNames.Register.name);
+            }
+        }} style={{
           width: 50,
           height: 50,
           alignItems: "center",

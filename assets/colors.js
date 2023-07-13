@@ -91,6 +91,20 @@ export const secondaryColor = {
         
         
     },
+    dark: {
+        default: "rgb(210, 228, 255)",
+        opacity100: "rgba(210, 228, 255, .1)",
+        opacity200: "rgba(210, 228, 255, .2)",
+        opacity300: "rgba(210, 228, 255, .3)",
+        opacity400: "rgba(210, 228, 255, .4)",
+        opacity500: "rgba(210, 228, 255, .5)",
+        opacity600: "rgba(210, 228, 255, .6)",
+        opacity700: "rgba(210, 228, 255, .7)",
+        opacity800: "rgba(210, 228, 255, .8)",
+        opacity900: "rgba(210, 228, 255, .9)",
+        
+        
+    },
     lighter: {
         default: "rgb(220, 238, 255)",
         opacity100: "rgba(220, 238, 255, .1)",
