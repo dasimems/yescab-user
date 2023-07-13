@@ -22,6 +22,7 @@ import RegistrationHeader from "./getting-started/RegistrationHeader"
 import Map from "./navigation/Map"
 import TripCard from "./trips/TripCard"
 import TripFilter from "./trips/TripFilter"
+import VehicleTypeCard from "./vehicle-type/VehicleTypeCard"
 
 export {
     Providers,
@@ -47,6 +48,7 @@ export {
     GettingStartedFooter,
     AppContainer,
     RegistrationFooter,
-    RegistrationHeader
+    RegistrationHeader,
+    VehicleTypeCard
 
 }

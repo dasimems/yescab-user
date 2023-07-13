@@ -9,6 +9,10 @@ import OnboardingTwoImage from "./onboarding-two-image.png";
 import OnboardingOneImage from "./onboarding-one-image.png"
 import RegistrationImage from "./registration-image.png"
 import FemaleAvatarTwo from "./avatar_female_1.png"
+import Bike from "./bike.png"
+import Car from "./car.png"
+import Van from "./van.png"
+import Truck from "./truck.png"
 
 export {
   logoImage,
@@ -21,5 +25,9 @@ export {
   OnboardingBackgroundOne,
   OnboardingOneImage,
   OnboardingTwoImage,
-  RegistrationImage
+  RegistrationImage,
+  Bike,
+  Car,
+  Van,
+  Truck
 };

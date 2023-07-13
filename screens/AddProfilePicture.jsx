@@ -108,7 +108,7 @@ const AddProfilePicture = () => {
                 
             </View>
 
-            <RegistrationFooter skipAction={()=>{}} next={NavNames.OTP.name} />
+            <RegistrationFooter skipAction={()=>{}} next={NavNames.ChooseVehicle.name} />
 
         </ScrollView>
     </ScreenContainer>

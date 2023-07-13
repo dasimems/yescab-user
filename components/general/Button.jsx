@@ -1,6 +1,6 @@
 import { View, Text, TouchableOpacity, Pressable, StyleSheet, Image } from 'react-native'
 import React from 'react'
-import { blackColor, secondaryColor } from '../../assets/colors'
+import { blackColor, primaryColor, secondaryColor, whiteColor } from '../../assets/colors'
 import { lato } from '../../fonts'
 import { loadingImage } from '../../assets/images'
 
@@ -63,7 +63,7 @@ const Button = ({loading, disabled, text, onPress, style, children, textColor,  
 
                         <Text
                             style={{
-                                color: textColor? textColor : "black",
+                                color: textColor? textColor : whiteColor.default,
                                 fontSize: fontSize? fontSize: 16,
                                 fontFamily: fontFamily? fontFamily : lato.regular.default
                             }}
@@ -84,7 +84,7 @@ const Button = ({loading, disabled, text, onPress, style, children, textColor,  
 const styles = StyleSheet.create({
     general:{
         width: "100%",
-        backgroundColor: secondaryColor.opacity700,
+        backgroundColor: primaryColor.opacity700,
         paddingVertical: 15,
         alignItems: "center",
         borderRadius: 10

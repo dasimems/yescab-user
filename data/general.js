@@ -1,6 +1,7 @@
 import { Dimensions } from "react-native";
 import { ChatIcon, Menu, NavigationIcon, TripsIcon, UserIcon } from "../assets/icons";
 import CountryListJson from "./all_country.json"
+import { Bike, Car, Truck, Van } from "../assets/images";
 
 const windowWidth = Dimensions.get("window").width;
 const windowHeight = Dimensions.get("window").height;
@@ -50,6 +51,18 @@ export const NavNames = {
     navShown: false,
     Icon: Menu
   },
+  ChooseVehicle: {
+    name: "ChooseVehicle",
+    label: "Choose Vehicle",
+    navShown: false,
+    Icon: Menu
+  },
+  VehicleDetails: {
+    name: "VehicleDetails",
+    label: "Vehicle Details",
+    navShown: false,
+    Icon: Menu
+  },
   Navigation: {
     name: "Navigation",
     label: "Navigation",
@@ -86,7 +99,37 @@ export const NavNames = {
   }
 };
 
-export const countryData = CountryListJson.map(country => ({name: country.name.common, mobileCode: country.idd.root, countryCode: country.cca2, flag: country.flags.png}));
+export const countryData = CountryListJson.map(country => ({name: country.name.common, mobileCode: country.idd.root, countryCode: country.cca2, flag: country.flags.png})),
+vehicleType = [
+  {
+
+    name: "Bike",
+    image: Bike,
+    center: true
+
+  },
+  {
+
+    name: "Car",
+    image: Car,
+    center: false
+
+  },
+  {
+
+    name: "Van",
+    image: Van,
+    center: false
+
+  },
+  {
+
+    name: "Truck",
+    image: Truck,
+    center: false
+
+  }
+];
 
 
 export const allNav = Object.keys(NavNames).map(nav => NavNames[nav]);

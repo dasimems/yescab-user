@@ -5,7 +5,7 @@ import { bauhs93, lato } from './fonts';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { AppContainer, CameraContainer, Modal, Providers, ScreenContainer } from './components';
-import { AddProfilePicture, ChatDetails, Chats, GettingStarted, GettingStartedTwo, Login, Navigation, OTP, Profile, Register, Trips } from './screens';
+import { AddProfilePicture, ChatDetails, Chats, ChooseVehicle, GettingStarted, GettingStartedTwo, Login, Navigation, OTP, Profile, Register, Trips, VehicleDetails } from './screens';
 import { NavNames } from './data/general';
 
 
@@ -43,6 +43,8 @@ export default function App() {
                 <Stack.Screen name={NavNames.GettingStarted.name} component={GettingStarted} />
                 <Stack.Screen name={NavNames.GettingStarted2.name} component={GettingStartedTwo} />
                 <Stack.Screen name={NavNames.Register.name} component={Register} />
+                <Stack.Screen name={NavNames.ChooseVehicle.name} component={ChooseVehicle} />
+                <Stack.Screen name={NavNames.VehicleDetails.name} component={VehicleDetails} />
                 <Stack.Screen name={NavNames.Navigation.name} component={Navigation} />
                 <Stack.Screen name={NavNames.AddProfilePicture.name} component={AddProfilePicture} />
                 <Stack.Screen name={NavNames.Login.name} component={Login} />
