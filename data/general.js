@@ -44,6 +44,12 @@ export const NavNames = {
     navShown: false,
     Icon: Menu
   },
+  AddProfilePicture: {
+    name: "AddProfilePicture",
+    label: "Add Profile Picture",
+    navShown: false,
+    Icon: Menu
+  },
   Navigation: {
     name: "Navigation",
     label: "Navigation",

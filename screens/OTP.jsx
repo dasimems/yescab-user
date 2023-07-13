@@ -47,7 +47,7 @@ const OTP = () => {
 
 
     if(allCode === "5555"){
-      navigate(NavNames.Navigation.name);
+      navigate(NavNames.AddProfilePicture.name);
 
     }else{
 
@@ -149,8 +149,8 @@ const OTP = () => {
                 }}
                 style={{ ...styles.inputStyle,
                 
-                    borderWidth: error? 1: 0,
-                    borderColor: error? dangerColor.opacity600: "transparent" }}
+                    borderBottomWidth: 2,
+                    borderColor: error? dangerColor.opacity600: blackColor.opacity400 }}
                 removePlaceholder
                 />
                 <FormInputField
@@ -185,8 +185,8 @@ const OTP = () => {
                 }}
                 style={{ ...styles.inputStyle,
                 
-                    borderWidth: error? 1: 0,
-                    borderColor: error? dangerColor.opacity600: "transparent" }}
+                    borderBottomWidth: 2,
+                    borderColor: error? dangerColor.opacity600: blackColor.opacity400 }}
                 removePlaceholder
                 />
                 <FormInputField
@@ -221,8 +221,8 @@ const OTP = () => {
                 }}
                 style={{ ...styles.inputStyle,
                 
-                    borderWidth: error? 1: 0,
-                    borderColor: error? dangerColor.opacity600: "transparent" }}
+                    borderBottomWidth: 2,
+                    borderColor: error? dangerColor.opacity600: blackColor.opacity400 }}
                 removePlaceholder
                 />
                 <FormInputField
@@ -252,8 +252,8 @@ const OTP = () => {
                 }}
                 style={{ ...styles.inputStyle,
                 
-                    borderWidth: error? 1: 0,
-                    borderColor: error? dangerColor.opacity600: "transparent" }}
+                    borderBottomWidth: 2,
+                    borderColor: error? dangerColor.opacity600: blackColor.opacity400 }}
                 removePlaceholder
                 />
             </View>
@@ -291,7 +291,7 @@ const OTP = () => {
         </View>
       </View>
 
-      <RegistrationFooter />
+      <RegistrationFooter next={NavNames.AddProfilePicture} />
 
       
     </ScreenContainer>
@@ -311,13 +311,13 @@ const styles = StyleSheet.create({
   inputStyle: {
     width: 50,
     backgroundColor: "transparent",
-    borderRadius: 10
+    borderRadius: 0
   },
 
   inputFieldStyle: {
     textAlign: "center",
     borderWidth: 0,
-    borderBottomWidth: 2,
+    borderBottomWidth: 0,
     borderRadius: 0,
     borderColor: blackColor.opacity400
   }

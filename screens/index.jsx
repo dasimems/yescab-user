@@ -1,3 +1,4 @@
+import AddProfilePicture from "./AddProfilePicture"
 import ChatDetails from "./ChatDetails"
 import Chats from "./Chats"
 import GettingStarted from "./GettingStarted"
@@ -19,5 +20,6 @@ export {
     Profile,
     Chats,
     ChatDetails,
-    Register
+    Register,
+    AddProfilePicture
 }

@@ -6,9 +6,11 @@ import Button from "../general/Button";
 import { NavNames, measurements } from "../../data/general";
 import { useNavigation, useRoute } from "@react-navigation/native";
 
-const RegistrationFooter = ({next}) => {
+const RegistrationFooter = ({next, skipAction}) => {
   const { name } = useRoute();
   const { navigate } = useNavigation();
+
+  
 
   if(!next){
     next = name
@@ -21,10 +23,18 @@ const RegistrationFooter = ({next}) => {
         paddingVertical:  measurements.windowWidth * 0.08,
         paddingHorizontal: 30,
         flexDirection: "row",
-        justifyContent: "flex-end",
-        alignItems: "center"
+        justifyContent: skipAction?"space-between" : "flex-end",
+        alignItems: "center",
+        gap: 20
       }}
     >
+
+      {skipAction && <TouchableOpacity onPress={skipAction}>
+        <Text style={{
+            fontFamily: lato.regular.default,
+            color: primaryColor.opacity500
+        }}>Skip</Text>
+      </TouchableOpacity>}
       
 
       <Button

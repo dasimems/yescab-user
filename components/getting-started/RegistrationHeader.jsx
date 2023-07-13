@@ -45,7 +45,8 @@ const RegistrationHeader = ({title, subTitle, backButtonHidden}) => {
         fontFamily: lato.regular.default,
         color: blackColor.opacity600,
         textAlign: "center",
-        maxWidth: 250
+        fontSize: 15,
+        maxWidth: 230
       }}>{subTitle}</Text>}
     </View>
   )

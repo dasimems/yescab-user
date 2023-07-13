@@ -20,13 +20,13 @@ const GettingStartedFooter = () => {
     return(
 
         <View style={{
-        width: "100%",
-        paddingVertical: checkIfGettingStartedOne()? measurements.windowWidth * 0.35 :  measurements.windowWidth * 0.1   ,
-        paddingBottom: measurements.windowWidth * 0.1,
-        paddingHorizontal: 30,
-        flexDirection: "row",
-        justifyContent: "space-between",
-        alignItems: "center",
+            width: "100%",
+            paddingVertical: checkIfGettingStartedOne()? measurements.windowWidth * 0.35 :  measurements.windowWidth * 0.1   ,
+            paddingBottom: measurements.windowWidth * 0.1,
+            paddingHorizontal: 30,
+            flexDirection: "row",
+            justifyContent: "space-between",
+            alignItems: "center",
 
       }}>
         <TouchableOpacity onPress={()=>{
