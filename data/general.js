@@ -1,6 +1,13 @@
 import { Dimensions } from "react-native";
-import { ChatIcon, Menu, NavigationIcon, TripsIcon, UserIcon } from "../assets/icons";
-import CountryListJson from "./all_country.json"
+import {
+  ChatIcon,
+  Menu,
+  NavigationIcon,
+  TripsIcon,
+  UserIcon,
+  Wallet
+} from "../assets/icons";
+import CountryListJson from "./all_country.json";
 import { Bike, Car, Truck, Van } from "../assets/images";
 
 const windowWidth = Dimensions.get("window").width;
@@ -33,7 +40,7 @@ export const NavNames = {
     Icon: Menu
   },
 
-   Register: {
+  Register: {
     name: "Register",
     label: "Register",
     navShown: false,
@@ -69,6 +76,12 @@ export const NavNames = {
     navShown: true,
     Icon: NavigationIcon
   },
+  Earnings: {
+    name: "Earnings",
+    label: "Earnings",
+    navShown: true,
+    Icon: Wallet
+  },
 
   Trips: {
     name: "Trips",
@@ -84,11 +97,17 @@ export const NavNames = {
     Icon: ChatIcon
   },
 
-   ChatDetails: {
+  ChatDetails: {
     name: "ChatDetails",
     label: "Chat Details",
     navShown: false,
     Icon: ChatIcon
+  },
+  Wallet: {
+    name: "Wallet",
+    label: "Wallet",
+    navShown: false,
+    Icon: Wallet
   },
 
   Profile: {
@@ -99,44 +118,40 @@ export const NavNames = {
   }
 };
 
-export const countryData = CountryListJson.map(country => ({name: country.name.common, mobileCode: country.idd.root, countryCode: country.cca2, flag: country.flags.png})),
-vehicleType = [
-  {
-
-    name: "Bike",
-    image: Bike,
-    center: true
-
-  },
-  {
-
-    name: "Car",
-    image: Car,
-    center: false
-
-  },
-  {
-
-    name: "Van",
-    image: Van,
-    center: false
-
-  },
-  {
-
-    name: "Truck",
-    image: Truck,
-    center: false
-
-  }
-];
-
+export const countryData = CountryListJson.map(country => ({
+    name: country.name.common,
+    mobileCode: country.idd.root,
+    countryCode: country.cca2,
+    flag: country.flags.png
+  })),
+  vehicleType = [
+    {
+      name: "Bike",
+      image: Bike,
+      center: true
+    },
+    {
+      name: "Car",
+      image: Car,
+      center: false
+    },
+    {
+      name: "Van",
+      image: Van,
+      center: false
+    },
+    {
+      name: "Truck",
+      image: Truck,
+      center: false
+    }
+  ];
 
 export const allNav = Object.keys(NavNames).map(nav => NavNames[nav]);
 export const screenNav = allNav.filter(nav => nav.navShown),
   measurements = {
     windowWidth,
     windowHeight
-  }
+  };
 
 export const padding = 15;
