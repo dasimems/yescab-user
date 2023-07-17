@@ -7,12 +7,14 @@ import GettingStarted from "./GettingStarted";
 import GettingStartedTwo from "./GettingStartedTwo";
 import Login from "./Login";
 import Navigation from "./Navigation";
+import NewBank from "./NewBank";
 import OTP from "./OTP";
 import Profile from "./Profile";
 import Register from "./Register";
 import Trips from "./Trips";
 import VehicleDetails from "./VehicleDetails";
 import Wallet from "./Wallet";
+import Withdraw from "./Withdraw";
 
 export {
   GettingStarted,
@@ -29,5 +31,7 @@ export {
   ChooseVehicle,
   VehicleDetails,
   Earnings,
-  Wallet
+  Wallet,
+  Withdraw,
+  NewBank
 };

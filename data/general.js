@@ -109,6 +109,18 @@ export const NavNames = {
     navShown: false,
     Icon: Wallet
   },
+  Withdraw: {
+    name: "Withdraw",
+    label: "Withdraw",
+    navShown: false,
+    Icon: Wallet
+  },
+  NewBank: {
+    name: "NewBank",
+    label: "Add Bank",
+    navShown: false,
+    Icon: Wallet
+  },
 
   Profile: {
     name: "Profile",
