@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { LoggedInContainer, TripCard, TripFilter } from '../components'
 import { trips } from '../data/tripsData'
 
-const Trips = () => {
+const History = () => {
   const [tripData, setTripData] = useState([])
   const [activeTripType, setActiveTripType] = useState("")
 
@@ -53,6 +53,6 @@ const Trips = () => {
   )
 }
 
-export default Trips
+export default History
 
 const styles = StyleSheet.create({})

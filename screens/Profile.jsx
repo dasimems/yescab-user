@@ -1,171 +1,258 @@
-import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import {
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View
+} from "react-native";
 import React from "react";
-import { Button, LoggedInContainer, Logo, Nav, RoundedImage } from "../components";
-import { blackColor, dangerColor, primaryColor, whiteColor } from "../assets/colors";
+import {
+  Button,
+  LoggedInContainer,
+  Logo,
+  Nav,
+  ProfileDetailsCard,
+  ProfileRoute,
+  RoundedImage,
+  Stats
+} from "../components";
+import {
+  blackColor,
+  dangerColor,
+  primaryColor,
+  whiteColor
+} from "../assets/colors";
 import { lato } from "../fonts";
 import { useNavigation } from "@react-navigation/native";
 import { AngleLeft, LogOutIcon, StarIcon } from "../assets/icons";
-import { NavNames, padding } from "../data/general";
+import { NavNames, padding, profileLinks } from "../data/general";
 import { MaleAvatarOne } from "../assets/images";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { FlatList } from "react-native";
 
 const Header = () => {
-    
   const { goBack } = useNavigation();
-    return(
-        <View style={{
-            flexDirection: "row",
-            gap: 10,
-            paddingHorizontal: padding,
-            paddingVertical: 15,
-            alignItems: "center"
+  return (
+    <SafeAreaView
+      style={{
+        flexDirection: "row",
+        gap: 10,
+        paddingHorizontal: padding,
+        paddingVertical: 15,
+        alignItems: "center"
+      }}
+    >
+      <TouchableOpacity
+        onPress={() => {
+          goBack();
+        }}
+      >
+        <AngleLeft />
+      </TouchableOpacity>
 
-        }}>
-
-
-            <TouchableOpacity onPress={()=>{
-                goBack();
-
-            }}>
-
-                 <AngleLeft />
-            </TouchableOpacity>
-
-            <Text
-                style={{
-                    fontSize: 18,
-                    fontFamily: lato.bold.default
-                }}
-            >My Account</Text>
-
-        </View>
-    )
-}
+      <Text
+        style={{
+          fontSize: 18,
+          fontFamily: lato.bold.default
+        }}
+      >
+        My Account
+      </Text>
+    </SafeAreaView>
+  );
+};
 
 const Profile = () => {
-    
-  const {  navigate } = useNavigation();
+  const { navigate } = useNavigation();
+
+  const stats = [
+    {
+      stat: "3,251",
+      label: "Trips",
+      action: () => navigate(NavNames.History.name)
+    },
+
+    {
+      stat: "4.90",
+      label: "Ratings",
+      action: () => navigate(NavNames.Rating.name)
+    },
+
+    {
+      stat: "2",
+      label: "Months"
+    }
+  ];
 
   return (
-    <LoggedInContainer
-        header={<Header />}
-        navHidden
-    >
+    <LoggedInContainer removeSafeView header={<Header />} navHidden>
+      <View
+        style={{
+          flex: 1
+        }}
+      >
+        <ScrollView
+          showsVerticalScrollIndicator={false}
+          contentContainerStyle={{
+            gap: 28
+          }}
+        >
+          <View
+            style={{
+              alignItems: "center",
+              marginTop: 20,
+              gap: 10
+            }}
+          >
+            <RoundedImage
+              imagePadding={3}
+              size={70}
+              imageParentBackground={blackColor.opacity100}
+              image={MaleAvatarOne}
+            />
 
-        <ScrollView contentContainerStyle={{
-            flex: 1
-        }}>
+            <Text
+              style={{
+                fontFamily: lato.bold.default,
+                color: blackColor.opacity600,
+                fontSize: 18,
+                textAlign: "center"
+              }}
+            >
+              John Doe
+            </Text>
 
-            <View style={{
-                alignItems: "center",
-                marginTop: 20,
-                gap: 10
+            <Text
+              style={{
+                fontFamily: lato.regular.default,
+                color: blackColor.opacity500,
+                fontSize: 13,
+                textAlign: "center"
+              }}
+            >
+              +(234) 903-366-4645
+            </Text>
 
-            }}>
-
-                <RoundedImage 
-                    imagePadding={3}
-                    size={70}
-                    imageParentBackground={blackColor.opacity100}
-                    image={MaleAvatarOne}
-                />
-
-                <Text style={{
-                    fontFamily: lato.bold.default,
-                    color: blackColor.opacity600,
-                    fontSize: 18,
-                    textAlign: "center"
-                }}>John Doe</Text>
-
-                <Text style={{
-                    fontFamily: lato.regular.default,
-                    color: blackColor.opacity500,
-                    fontSize: 13,
-                    textAlign: "center"
-                }}>+(234) 903-366-4645</Text>
-
-                <View style={{
-                    flexDirection: "row",
-                    alignItems: "center",
-                    gap: 3
-                }}>
-
-                    <StarIcon set="bold" color={"#FFCC00"} /> 
-
-                    <Text style={{
-                        fontFamily: lato.regular.default,
-                        color: blackColor.opacity500,
-                        fontSize: 13,
-                        textAlign: "center"
-                    }}>4.9</Text>
-
-                </View>
-
-            </View>
-
-            <View style={{
-                marginTop: 20,
-                gap: 30,
-                flex: 1
-            }}>
-                <View style={{
-                    ...styles.accountContentStyle
-                }}>
-                    <Text style={{
-                        ...styles.contentTitleStyle
-                    }}>Private Code</Text>
-                    <Text style={{
-                        ...styles.contentValueStyle
-                    }}>Wrry#5fw</Text>
-                </View>
-
-                <View style={{
-                    ...styles.accountContentStyle
-                }}>
-                    <Text style={{
-                        ...styles.contentTitleStyle
-                    }}>Email</Text>
-                    <Text style={{
-                        ...styles.contentValueStyle
-                    }}>dasimems@gmail.com</Text>
-                </View>
-
-                 <View style={{
-                    ...styles.accountContentStyle
-                }}>
-                    <Text style={{
-                        ...styles.contentTitleStyle
-                    }}>Phone number</Text>
-                    <Text style={{
-                        ...styles.contentValueStyle
-                    }}>+(234) 903-3663-4645</Text>
-                </View>
-            </View>
-
-        </ScrollView>
-        <View style={{
-            alignItems: "center",
-            paddingVertical: 20
-        }}>
-            <TouchableOpacity style={{
-                paddingVertical: 15,
-                paddingHorizontal: 20,
-                backgroundColor: dangerColor.opacity600,
-                borderRadius: 10,
+            <View
+              style={{
                 flexDirection: "row",
                 alignItems: "center",
-                gap: 10
-            }} onPress={()=>{
-                navigate(NavNames.Login.name)
-            }}>
+                gap: 3
+              }}
+            >
+              <StarIcon set="bold" color={"#FFCC00"} />
 
-                <Text style={{
-                    fontFamily: lato.bold.default,
-                }}>Log out</Text>
+              <Text
+                style={{
+                  fontFamily: lato.regular.default,
+                  color: blackColor.opacity500,
+                  fontSize: 13,
+                  textAlign: "center"
+                }}
+              >
+                4.9
+              </Text>
+            </View>
+          </View>
 
-                <LogOutIcon />
+          <View
+            style={{
+              gap: 28
+            }}
+          >
+            <View
+              style={{
+                alignItems: "center"
+              }}
+            >
+              <Stats
+                stats={stats}
+                style={{
+                  shadowColor: blackColor.opacity500,
+                  borderColor: "rgba(0, 0, 0, .01)"
+                }}
+              />
+            </View>
 
-            </TouchableOpacity>
-        </View>
+            <View
+              style={{
+                gap: 20
+              }}
+            >
+              {/* <ProfileDetailsCard
+                title="Member since"
+                value="February 15, 2023"
+              />
+              <ProfileDetailsCard
+                title="Car Model"
+                value="Mercedes-Benz E-Class"
+              />
+              <ProfileDetailsCard
+                title="Car Model"
+                value="Mercedes-Benz E-Class"
+              /> */}
+            </View>
+
+            <View
+              style={{
+                paddingTop: 10,
+                gap: 12
+              }}
+            >
+              <Text
+                style={{
+                  fontFamily: lato.bold.default,
+                  fontSize: 15
+                }}
+              >
+                Account Settings
+              </Text>
+
+              {profileLinks.map(({ Icon, label, name }, index) =>
+                <ProfileRoute
+                  label={label}
+                  name={name}
+                  key={index}
+                  icon={
+                    <Icon color={primaryColor.default} set="bold" size={25} />
+                  }
+                />
+              )}
+            </View>
+          </View>
+        </ScrollView>
+      </View>
+      <View
+        style={{
+          alignItems: "center",
+          paddingVertical: 20
+        }}
+      >
+        <TouchableOpacity
+          style={{
+            paddingVertical: 10,
+            paddingHorizontal: 20,
+            backgroundColor: dangerColor.opacity600,
+            borderRadius: 10,
+            flexDirection: "row",
+            alignItems: "center",
+            gap: 10
+          }}
+          onPress={() => {
+            navigate(NavNames.Login.name);
+          }}
+        >
+          <Text
+            style={{
+              fontFamily: lato.bold.default
+            }}
+          >
+            Log out
+          </Text>
+
+          <LogOutIcon />
+        </TouchableOpacity>
+      </View>
     </LoggedInContainer>
   );
 };

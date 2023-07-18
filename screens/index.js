@@ -11,10 +11,13 @@ import NewBank from "./NewBank";
 import OTP from "./OTP";
 import Profile from "./Profile";
 import Register from "./Register";
-import Trips from "./Trips";
+import History from "./History";
 import VehicleDetails from "./VehicleDetails";
 import Wallet from "./Wallet";
 import Withdraw from "./Withdraw";
+import Rating from "./Rating";
+import RatingDetails from "./RatingDetails";
+import ExtraRateDetails from "./ExtraRateDetails";
 
 export {
   GettingStarted,
@@ -22,7 +25,7 @@ export {
   Login,
   OTP,
   Navigation,
-  Trips,
+  History,
   Profile,
   Chats,
   ChatDetails,
@@ -33,5 +36,8 @@ export {
   Earnings,
   Wallet,
   Withdraw,
-  NewBank
+  NewBank,
+  Rating,
+  RatingDetails,
+  ExtraRateDetails
 };

@@ -17,10 +17,17 @@ import Nav from "./general/Nav";
 import Providers from "./general/Providers";
 import RoundedImage from "./general/RoundedImage";
 import ScreenContainer from "./general/ScreenContainer";
+import Stats from "./general/Stats";
+import StatCard from "./general/inner/StatCard";
 import GettingStartedFooter from "./getting-started/GettingStartedFooter";
 import RegistrationFooter from "./getting-started/RegistrationFooter";
 import RegistrationHeader from "./getting-started/RegistrationHeader";
 import Map from "./navigation/Map";
+import ProfileDetailsCard from "./profile/ProfileDetailsCard";
+import ProfileHeader from "./profile/inner/Header";
+import RatingBar from "./profile/inner/ratings/RatingBar";
+import ReviewCard from "./profile/inner/ratings/ReviewCard";
+import ReviewList from "./profile/inner/ratings/ReviewList";
 import TripCard from "./trips/TripCard";
 import TripFilter from "./trips/TripFilter";
 import VehicleTypeCard from "./vehicle-type/VehicleTypeCard";
@@ -57,5 +64,12 @@ export {
   EarningChart,
   BankCard,
   BankList,
-  TransactionCard
+  TransactionCard,
+  RatingBar,
+  ReviewCard,
+  ReviewList,
+  ProfileDetailsCard,
+  ProfileHeader,
+  Stats,
+  StatCard
 };

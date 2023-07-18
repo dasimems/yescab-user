@@ -1,8 +1,12 @@
 import { Dimensions } from "react-native";
 import {
+  CarIcon,
   ChatIcon,
+  Dashboard,
   Menu,
   NavigationIcon,
+  Settings,
+  StarIcon,
   TripsIcon,
   UserIcon,
   Wallet
@@ -74,7 +78,7 @@ export const NavNames = {
     name: "Navigation",
     label: "Navigation",
     navShown: true,
-    Icon: NavigationIcon
+    Icon: Dashboard
   },
   Earnings: {
     name: "Earnings",
@@ -83,9 +87,9 @@ export const NavNames = {
     Icon: Wallet
   },
 
-  Trips: {
-    name: "Trips",
-    label: "Trips",
+  History: {
+    name: "History",
+    label: "History",
     navShown: true,
     Icon: TripsIcon
   },
@@ -93,9 +97,15 @@ export const NavNames = {
   Chat: {
     name: "Chat",
     label: "Chat",
-    navShown: true,
+    navShown: false,
     Icon: ChatIcon
   },
+  // Settings: {
+  //   name: "Settings",
+  //   label: "Settings",
+  //   navShown: true,
+  //   Icon: Settings
+  // },
 
   ChatDetails: {
     name: "ChatDetails",
@@ -121,12 +131,30 @@ export const NavNames = {
     navShown: false,
     Icon: Wallet
   },
+  Rating: {
+    name: "Rating",
+    label: "Rating",
+    navShown: false,
+    Icon: CarIcon
+  },
 
   Profile: {
     name: "Profile",
     label: "Profile",
+    navShown: true,
+    Icon: Settings
+  },
+  RatingDetails: {
+    name: "RatingDetails",
+    label: "Rating Details",
     navShown: false,
-    Icon: UserIcon
+    Icon: StarIcon
+  },
+  ExtraRatingDetails: {
+    name: "ExtraRatingDetails",
+    label: "Extra Rating Details",
+    navShown: false,
+    Icon: StarIcon
   }
 };
 
@@ -161,6 +189,7 @@ export const countryData = CountryListJson.map(country => ({
 
 export const allNav = Object.keys(NavNames).map(nav => NavNames[nav]);
 export const screenNav = allNav.filter(nav => nav.navShown),
+  profileLinks = allNav.filter(nav => nav.profileLink),
   measurements = {
     windowWidth,
     windowHeight
