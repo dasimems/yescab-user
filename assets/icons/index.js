@@ -49,6 +49,7 @@ import {
   Image2
 } from "react-native-iconly";
 import { X } from "lucide-react-native";
+import { Entypo } from '@expo/vector-icons';
 
 export const Settings = ({ size, color }) => {
   return (
@@ -67,6 +68,16 @@ export const Dashboard = ({ size, color }) => {
 export const CheckIcon = ({ size, color }) => {
   return (
     <Check size={size ? size : 20} color={color ? color : blackColor.default} />
+  );
+};
+export const LocationPin = ({ size, color }) => {
+  return (
+    <Entypo name="location-pin"  size={size ? size : 20} color={color ? color : blackColor.default} />
+  );
+};
+export const LocationDot = ({ size, color }) => {
+  return (
+    <FontAwesome name="dot-circle-o" size={size ? size : 20} color={color ? color : blackColor.default} />
   );
 };
 

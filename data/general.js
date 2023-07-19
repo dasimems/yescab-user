@@ -155,7 +155,14 @@ export const NavNames = {
     label: "Extra Rating Details",
     navShown: false,
     Icon: StarIcon
-  }
+  },
+  TripDetails: {
+    name: "TripDetails",
+    label: "TripDetails",
+    navShown: false,
+    Icon: StarIcon
+  },
+  
 };
 
 export const countryData = CountryListJson.map(country => ({

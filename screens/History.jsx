@@ -35,6 +35,7 @@ const History = () => {
         }}>
 
           <FlatList
+            showsVerticalScrollIndicator={false}
             contentContainerStyle={{
               width: "100%",
               gap: 20
@@ -42,9 +43,9 @@ const History = () => {
             data={tripData}
             extraData={tripData}
             keyExtractor={(_, index) => index}
-            renderItem={({item: {date, passengerName, price, trip, status, image}})=>{
+            renderItem={({item: {date, passengerName, price, trip, status, image, id}})=>{
               
-              return <TripCard image={image} date={date} name={passengerName} price={price} from={trip?.from} to={trip?.to} status={status} />;}}
+              return <TripCard image={image} date={date} name={passengerName} id={id} price={price} from={trip?.from} to={trip?.to} status={status} />;}}
           />
 
         </View>

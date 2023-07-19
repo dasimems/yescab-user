@@ -18,6 +18,7 @@ import Withdraw from "./Withdraw";
 import Rating from "./Rating";
 import RatingDetails from "./RatingDetails";
 import ExtraRateDetails from "./ExtraRateDetails";
+import TripDetails from "./TripDetails";
 
 export {
   GettingStarted,
@@ -39,5 +40,6 @@ export {
   NewBank,
   Rating,
   RatingDetails,
-  ExtraRateDetails
+  ExtraRateDetails,
+  TripDetails
 };

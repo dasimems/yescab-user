@@ -1,7 +1,9 @@
 import { Pressable, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { lato } from '../../fonts'
-import { blackColor, primaryColor } from '../../assets/colors'
+import { blackColor, primaryColor, whiteColor } from '../../assets/colors'
+import { AngleDown } from '../../assets/icons'
+import { ScrollView } from 'react-native-gesture-handler'
 
 const TripFilter = ({activeFilter,onChange}) => {
     const [tripType, setTripType] = useState("ongoing")
@@ -23,44 +25,155 @@ const TripFilter = ({activeFilter,onChange}) => {
     }, [])
   return (
     <View style={{
-        flexDirection: "row",
-        alignItems:"center",
         justifyContent: "space-between",
         gap: 10,
     }}>
 
-        {filters.map((filter,index)=> (
+        <TouchableOpacity style={{
+            flexDirection: "row",
+            alignItems: "center",
+            gap: 10
+        }}>
+            <Text style={{
+                fontFamily: lato.regular.default
+            }}>January 2020</Text>
+            <AngleDown color={blackColor.opacity600} />
+        </TouchableOpacity>
 
-            tripType.toLowerCase() === filter.toLowerCase()? (
-                <Pressable key={index}  style={{
-                    ...styles.filterButtonStyle,
-                    borderBottomWidth:  2,
-                    borderBottomColor:  primaryColor.default 
+        <View style={{
+        }}>
+            <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{
+                
+                gap: 20,
+                alignItems: "center"
+            }}>
+
+                <TouchableOpacity style={{
+                    ...styles.filterButtonStyle
+
+
                 }}>
                     <Text style={{
-                        ...styles.filterTextStyle,
-                        color:  blackColor.default,
-                        fontFamily:  lato.black.default
-                    }}>{filter}</Text>
-                </Pressable>
-            ): (
+                            ...styles.filterTextStyle
 
-                <TouchableOpacity key={index} onPress={()=>{
-                    setTripType(filter);
-                    onChange(filter);
-
-                }} style={{
-                    ...styles.filterButtonStyle,
-                }}>
+                    }}>Tue</Text>
                     <Text style={{
-                        ...styles.filterTextStyle,
-
-                    }}>{filter}</Text>
+                        ...styles.filterTextTwoStyle
+                    }}>19</Text>
                 </TouchableOpacity>
+                <TouchableOpacity style={{
+                    ...styles.filterButtonStyle
 
-            )
 
-        ))}
+                }}>
+                    <Text style={{
+                            ...styles.filterTextStyle
+
+                    }}>Wed</Text>
+                    <Text style={{
+                        ...styles.filterTextTwoStyle
+                    }}>20</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={{
+                    ...styles.filterButtonStyle
+
+
+                }}>
+                    <Text style={{
+                            ...styles.filterTextStyle
+
+                    }}>Thur</Text>
+                    <Text style={{
+                        ...styles.filterTextTwoStyle
+                    }}>25</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={{
+                    ...styles.filterButtonStyle,
+                    backgroundColor: primaryColor.default
+
+
+                }}>
+                    <Text style={{
+                            ...styles.filterTextStyle,
+                            color: whiteColor.default
+
+                    }}>Fri</Text>
+                    <Text style={{
+                        ...styles.filterTextTwoStyle,
+                        color: whiteColor.default
+                    }}>26</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={{
+                    ...styles.filterButtonStyle
+
+
+                }}>
+                    <Text style={{
+                            ...styles.filterTextStyle
+
+                    }}>Sat</Text>
+                    <Text style={{
+                        ...styles.filterTextTwoStyle
+                    }}>27</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={{
+                    ...styles.filterButtonStyle
+
+
+                }}>
+                    <Text style={{
+                            ...styles.filterTextStyle
+
+                    }}>Sun</Text>
+                    <Text style={{
+                        ...styles.filterTextTwoStyle
+                    }}>28</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={{
+                    ...styles.filterButtonStyle
+
+
+                }}>
+                    <Text style={{
+                            ...styles.filterTextStyle
+
+                    }}>Mon</Text>
+                    <Text style={{
+                        ...styles.filterTextTwoStyle
+                    }}>29</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={{
+                    ...styles.filterButtonStyle
+
+
+                }}>
+                    <Text style={{
+                            ...styles.filterTextStyle
+
+                    }}>Tue</Text>
+                    <Text style={{
+                        ...styles.filterTextTwoStyle
+                    }}>30</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={{
+                    ...styles.filterButtonStyle
+
+
+                }}>
+                    <Text style={{
+                            ...styles.filterTextStyle
+
+                    }}>Wed</Text>
+                    <Text style={{
+                        ...styles.filterTextTwoStyle
+                    }}>31</Text>
+                </TouchableOpacity>
+            </ScrollView>
+
+        </View>
+
+
+
     </View>
   )
 }
@@ -70,14 +183,22 @@ export default TripFilter
 const styles = StyleSheet.create({
 
     filterButtonStyle: {
-        paddingHorizontal: 10,
-        paddingVertical: 8
+        padding: 10,
+        borderRadius: 10,
+        backgroundColor: primaryColor.opacity100,
+        alignItems: "center",
+        gap: 5
 
     },
     filterTextStyle: {
-        fontFamily: lato.bold.default,
-        fontSize: 15,
-        color: blackColor.opacity700
+        color: primaryColor.default,
+
+
+    },
+    filterTextTwoStyle: {
+        color: blackColor.default,
+        fontSize: 16,
+        fontFamily: lato.bold.default
 
 
     }

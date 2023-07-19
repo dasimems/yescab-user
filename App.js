@@ -5,7 +5,7 @@ import { bauhs93, lato } from './fonts';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { AppContainer, CameraContainer, Modal, Providers, ScreenContainer } from './components';
-import { AddProfilePicture, ChatDetails, Chats, ChooseVehicle, Earnings, ExtraRateDetails, GettingStarted, GettingStartedTwo, History, Login, Navigation, NewBank, OTP, Profile, Rating, RatingDetails, Register,  VehicleDetails, Wallet, Withdraw } from './screens';
+import { AddProfilePicture, ChatDetails, Chats, ChooseVehicle, Earnings, ExtraRateDetails, GettingStarted, GettingStartedTwo, History, Login, Navigation, NewBank, OTP, Profile, Rating, RatingDetails, Register,  TripDetails,  VehicleDetails, Wallet, Withdraw } from './screens';
 import { NavNames } from './data/general';
 
 
@@ -33,7 +33,7 @@ export default function App() {
         <AppContainer>
 
           <NavigationContainer >
-            <Stack.Navigator >
+            <Stack.Navigator initialRouteName={NavNames.Navigation.name}>
               <Stack.Group screenOptions={{
                   animation:"slide_from_right",
                   headerShown: false
@@ -55,6 +55,7 @@ export default function App() {
                 <Stack.Screen name={NavNames.OTP.name} component={OTP} />
                 <Stack.Screen name={NavNames.History.name} component={History} />
                 <Stack.Screen name={NavNames.Rating.name} component={Rating} />
+                <Stack.Screen name={NavNames.TripDetails.name} component={TripDetails} />
                 <Stack.Screen name={NavNames.Profile.name} component={Profile} />
                 <Stack.Screen name={NavNames.RatingDetails.name} component={RatingDetails} />
                 <Stack.Screen name={NavNames.Chat.name} component={Chats} />

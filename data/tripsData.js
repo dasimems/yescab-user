@@ -23,7 +23,8 @@ export const trips = [
                 // time: Date.now(),
                 place: "Ghogha Circle, Bhavnagar"
             }
-        }
+        },
+        id: 1
     },
 
     {
@@ -47,7 +48,8 @@ export const trips = [
                 // time: Date.now(),
                 place: "Ghogha Circle, Bhavnagar"
             }
-        }
+        },
+        id: 2
     },
 
     {
@@ -71,7 +73,8 @@ export const trips = [
                 // time: Date.now(),
                 place: "Ghogha Circle, Bhavnagar"
             }
-        }
+        },
+        id: 3
     },
 
     {
@@ -95,7 +98,8 @@ export const trips = [
                 // time: Date.now(),
                 place: "Ghogha Circle, Bhavnagar"
             }
-        }
+        },
+        id: 4
     },
 
     {
@@ -119,7 +123,8 @@ export const trips = [
                 // time: Date.now(),
                 place: "Ghogha Circle, Bhavnagar"
             }
-        }
+        },
+        id: 5
     },
 
     {
@@ -143,7 +148,8 @@ export const trips = [
                 // time: Date.now(),
                 place: "Ghogha Circle, Bhavnagar"
             }
-        }
+        },
+        id: 6
     },
 
     {
@@ -167,7 +173,8 @@ export const trips = [
                 // time: Date.now(),
                 place: "Ghogha Circle, Bhavnagar"
             }
-        }
+        },
+        id: 7
     },
 
     {
@@ -191,7 +198,8 @@ export const trips = [
                 // time: Date.now(),
                 place: "Ghogha Circle, Bhavnagar"
             }
-        }
+        },
+        id: 8
     },
 
     {
@@ -215,7 +223,8 @@ export const trips = [
                 // time: Date.now(),
                 place: "Ghogha Circle, Bhavnagar"
             }
-        }
+        },
+        id: 9
     },
 
 
