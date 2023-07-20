@@ -31,10 +31,12 @@ import {
   ChevronRight,
   Check
 } from "lucide-react-native";
+import UserVerifiedIcon from "./iconoir_verified-user.svg"
 import { MaterialIcons } from "@expo/vector-icons";
 import { FontAwesome5 } from "@expo/vector-icons";
 import { FontAwesome } from "@expo/vector-icons";
 import { blackColor } from "../colors";
+import { Ionicons } from '@expo/vector-icons';
 import {
   Activity,
   Chat,
@@ -70,6 +72,11 @@ export const CheckIcon = ({ size, color }) => {
     <Check size={size ? size : 20} color={color ? color : blackColor.default} />
   );
 };
+export const UserVerified = ({ size, color }) => {
+  return (
+    <UserVerifiedIcon width={size ? size : 20} height={size ? size : 20} color={color ? color : blackColor.default} />
+  );
+};
 export const LocationPin = ({ size, color }) => {
   return (
     <Entypo name="location-pin"  size={size ? size : 20} color={color ? color : blackColor.default} />
@@ -78,6 +85,16 @@ export const LocationPin = ({ size, color }) => {
 export const LocationDot = ({ size, color }) => {
   return (
     <FontAwesome name="dot-circle-o" size={size ? size : 20} color={color ? color : blackColor.default} />
+  );
+};
+export const LocationDot2 = ({ size, color }) => {
+  return (
+    <MaterialCommunityIcons name="target" size={size ? size : 20} color={color ? color : blackColor.default} />
+  );
+};
+export const OptionIcon = ({ size, color }) => {
+  return (
+    <Ionicons name="options" size={size ? size : 20} color={color ? color : blackColor.default} />
   );
 };
 

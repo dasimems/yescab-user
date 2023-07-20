@@ -24,6 +24,7 @@ import RegistrationFooter from "./getting-started/RegistrationFooter";
 import RegistrationHeader from "./getting-started/RegistrationHeader";
 import Map from "./navigation/Map";
 import ProfileDetailsCard from "./profile/ProfileDetailsCard";
+import ProfileRoute from "./profile/ProfileRoute";
 import ProfileHeader from "./profile/inner/Header";
 import RatingBar from "./profile/inner/ratings/RatingBar";
 import ReviewCard from "./profile/inner/ratings/ReviewCard";
@@ -71,5 +72,6 @@ export {
   ProfileDetailsCard,
   ProfileHeader,
   Stats,
-  StatCard
+  StatCard,
+  ProfileRoute
 };
