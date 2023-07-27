@@ -93,6 +93,12 @@ export const NavNames = {
     navShown: true,
     Icon: TripsIcon
   },
+  AddAddress: {
+    name: "AddAddress",
+    label: "AddAddress",
+    navShown: true,
+    Icon: TripsIcon
+  },
 
   Chat: {
     name: "Chat",
@@ -161,8 +167,7 @@ export const NavNames = {
     label: "TripDetails",
     navShown: false,
     Icon: StarIcon
-  },
-  
+  }
 };
 
 export const countryData = CountryListJson.map(country => ({

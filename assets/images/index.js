@@ -14,6 +14,8 @@ import Car from "./car.png";
 import Van from "./van.png";
 import Truck from "./truck.png";
 import WalletBanner from "./wallet-banner.png";
+import AddPicture from "./add-picture-image.png";
+import AddAddressImage from "./add-address.png";
 
 export {
   logoImage,
@@ -31,5 +33,7 @@ export {
   Car,
   Van,
   Truck,
-  WalletBanner
+  WalletBanner,
+  AddPicture,
+  AddAddressImage
 };

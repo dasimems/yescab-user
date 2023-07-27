@@ -4,48 +4,40 @@ import { AngleRight, UserVerified } from "../../assets/icons";
 import { lato } from "../../fonts";
 import { blackColor } from "../../assets/colors";
 
-const ProfileRoute = ({ title, description, name }) => {
+const ProfileRoute = ({ icon, title, description, name, titleStyle }) => {
   return (
     <TouchableOpacity
       style={{
         flexDirection: "row",
         alignItems: "center",
-        justifyContent: "space-between",
+        justifyContent: "space-between"
       }}
     >
       <View
         style={{
           flexDirection: "row",
           alignItems: "center",
-          gap: 10,
+          gap: 10
         }}
       >
-        <UserVerified />
+        {icon ? icon : <UserVerified />}
 
         <View
           style={{
-            gap: 6,
+            gap: 6
           }}
         >
           <Text
             style={{
-              fontFamily: lato.bold.default,
+              fontFamily: lato.bold.default
             }}
           >
             {title}
           </Text>
-          <Text
-            style={{
-              fontFamily: lato.regular.default,
-              color: blackColor.opacity600,
-            }}
-          >
-            {description}
-          </Text>
         </View>
       </View>
 
-      <AngleRight />
+      <AngleRight color={blackColor.opacity600} />
     </TouchableOpacity>
   );
 };

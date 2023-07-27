@@ -31,8 +31,8 @@ import { NavNames } from "../data/general";
 import { Call } from "react-native-iconly";
 import { Camera } from "lucide-react-native";
 import { Image } from "react-native";
-import { AddPicture } from "../assets/images";
-import { CameraIcon, GalleryIcon } from "../assets/icons";
+import { AddAddressImage, AddPicture } from "../assets/images";
+import { CameraIcon, Dashboard, GalleryIcon, WorkIcon } from "../assets/icons";
 
 const RouteIcon = ({ Icon }) => {
   return (
@@ -53,7 +53,7 @@ const RouteIcon = ({ Icon }) => {
   );
 };
 
-const AddProfilePicture = () => {
+const AddAddress = () => {
   const { navigate } = useNavigation();
   const { inputStyle } = allStyles;
   const { phone, setPhoneNumber } = useFormContext();
@@ -81,7 +81,7 @@ const AddProfilePicture = () => {
       >
         <View>
           <Image
-            source={AddPicture}
+            source={AddAddressImage}
             style={{
               resizeMode: "contain",
               width: "100%"
@@ -101,7 +101,7 @@ const AddProfilePicture = () => {
               color: blackColor.opacity700
             }}
           >
-            Adding Photos Ease Pickups
+            Search Less, Ride Fast
           </Text>
           <Text
             style={{
@@ -109,29 +109,28 @@ const AddProfilePicture = () => {
               color: blackColor.opacity600
             }}
           >
-            Drivers often use your profile picture to confirm that you are the
-            correct rider
+            Enter home, work or most frequented address in your saved location
           </Text>
         </View>
 
         <ProfileRoute
-          icon={<RouteIcon Icon={CameraIcon} />}
-          title="Take Photo"
+          icon={<RouteIcon Icon={Dashboard} />}
+          title="Add Home Address"
         />
         <ProfileRoute
-          icon={<RouteIcon Icon={GalleryIcon} />}
-          title="Choose from library"
+          icon={<RouteIcon Icon={WorkIcon} />}
+          title="Add Work Address"
         />
       </ScrollView>
       <RegistrationFooter
         skipAction={() => {}}
-        next={NavNames.AddAddress.name}
+        next={NavNames.Navigation.name}
       />
     </ScreenContainer>
   );
 };
 
-export default AddProfilePicture;
+export default AddAddress;
 
 const styles = StyleSheet.create({
   formParentStyle: {
