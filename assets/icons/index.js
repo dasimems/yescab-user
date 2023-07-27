@@ -35,7 +35,7 @@ import {
 import UserVerifiedIcon from "./iconoir_verified-user.svg";
 import { MaterialIcons } from "@expo/vector-icons";
 import { FontAwesome5 } from "@expo/vector-icons";
-import { FontAwesome } from "@expo/vector-icons";
+import { FontAwesome, MaterialCommunityIcons } from "@expo/vector-icons";
 import { blackColor } from "../colors";
 import { Ionicons } from "@expo/vector-icons";
 import {
@@ -53,6 +53,7 @@ import {
 } from "react-native-iconly";
 import { X } from "lucide-react-native";
 import { Entypo } from "@expo/vector-icons";
+import { MenuIcon } from "lucide-react-native";
 
 export const Settings = ({ size, color }) => {
   return (
@@ -267,6 +268,14 @@ export const Search = ({ size, color }) => {
 export const Menu = ({ size, color }) => {
   return (
     <MoreVertical
+      size={size ? size : 20}
+      color={color ? color : blackColor.default}
+    />
+  );
+};
+export const Menu2 = ({ size, color }) => {
+  return (
+    <MenuIcon
       size={size ? size : 20}
       color={color ? color : blackColor.default}
     />

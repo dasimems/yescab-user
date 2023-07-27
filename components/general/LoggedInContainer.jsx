@@ -7,6 +7,7 @@ import { AngleLeft, ArrowLeft } from "../../assets/icons";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import { lato } from "../../fonts";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { StatusBar } from "expo-status-bar";
 
 
 const Contents = ({children, header, headerText, headerTextStyle, headerStyle, showBackFunction, navHidden, headerHidden, containerStyle}) => {
@@ -67,7 +68,6 @@ const Contents = ({children, header, headerText, headerTextStyle, headerStyle, s
         {children}
       </View>
 
-        {!navHidden && <Nav />}
 
     </>
 
@@ -76,35 +76,40 @@ const Contents = ({children, header, headerText, headerTextStyle, headerStyle, s
 
 const LoggedInContainer = ({children, removeSafeView, header, headerText, headerTextStyle, headerStyle, showBackFunction, navHidden, headerHidden, style, containerStyle}) => {
   return (
-    <View
-      style={{
-        flex: 1,
-        backgroundColor: whiteColor.default,
-        ...style
-      }}
-    >
 
-    {!removeSafeView? <SafeAreaView style={{
-      
-        flex: 1,
-        backgroundColor: whiteColor.default,
-        ...style
-    }}>
+    <>  
+      <StatusBar backgroundColor={whiteColor.default} style="dark" />
+    
+      <View
+        style={{
+          flex: 1,
+          backgroundColor: whiteColor.default,
+          ...style
+        }}
+      >
 
-      <Contents {...{children, header, headerText, headerTextStyle, headerStyle, showBackFunction, navHidden, headerHidden, style, containerStyle}} />
+      {!removeSafeView? <SafeAreaView style={{
+        
+          flex: 1,
+          backgroundColor: whiteColor.default,
+          ...style
+      }}>
 
-    </SafeAreaView>: <View style={{
-      
-        flex: 1,
-        backgroundColor: whiteColor.default,
-        ...style
-    }}>
+        <Contents {...{children, header, headerText, headerTextStyle, headerStyle, showBackFunction, navHidden, headerHidden, style, containerStyle}} />
 
-      <Contents {...{children, header, headerText, headerTextStyle, headerStyle, showBackFunction, navHidden, headerHidden, style, containerStyle}} />
+      </SafeAreaView>: <View style={{
+        
+          flex: 1,
+          backgroundColor: whiteColor.default,
+          ...style
+      }}>
 
-    </View>}
+        <Contents {...{children, header, headerText, headerTextStyle, headerStyle, showBackFunction, navHidden, headerHidden, style, containerStyle}} />
 
-    </View>
+      </View>}
+
+      </View>
+    </>
   );
 };
 
