@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "YesCab",
-    "slug": "YesCab",
+    "name": "YesCab User",
+    "slug": "YesCab-user",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -16,11 +16,11 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.yesCab.driver",
+      "bundleIdentifier": "com.yesCab.user",
       "buildNumber": "1.0.0"
     },
     "android": {
-      "package": "com.yesCab.driver",
+      "package": "com.yesCab.user",
       "versionCode": 1,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
