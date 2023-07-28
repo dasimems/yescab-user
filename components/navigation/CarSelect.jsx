@@ -1,5 +1,5 @@
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import React from "react";
+import React, { useCallback } from "react";
 import { lato } from "../../fonts";
 import { blackColor, whiteColor } from "../../assets/colors";
 import CarSelectCard from "../general/CarSelectCard";
@@ -7,10 +7,18 @@ import Button from "../general/Button";
 import { ScheduleIcon } from "../../assets/icons";
 import { useNavigation } from "@react-navigation/native";
 import { NavNames } from "../../data/general";
+import { useActionContext } from "../../context";
+import ScheduleDateSelect from "./ScheduleDateSelect";
 
 const CarSelect = () => {
   const paddingHorizontal = 25;
+  const { openModal } = useActionContext();
   const { navigate } = useNavigation();
+  const openScheduleModal = useCallback(() => {
+    openModal({
+      content: <ScheduleDateSelect />
+    });
+  }, []);
   return (
     <View
       style={{
@@ -57,7 +65,7 @@ const CarSelect = () => {
         </Button>
         <TouchableOpacity
           onPress={() => {
-            navigate(NavNames.ScheduleRide.name);
+            openScheduleModal();
           }}
           style={{
             flexDirection: "row",

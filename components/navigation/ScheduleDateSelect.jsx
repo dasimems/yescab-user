@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import DatePicker from "react-native-date-picker";
 import { padding } from "../../data/general";
 import { lato } from "../../fonts";
