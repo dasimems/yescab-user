@@ -16,6 +16,10 @@ import Truck from "./truck.png";
 import WalletBanner from "./wallet-banner.png";
 import AddPicture from "./add-picture-image.png";
 import AddAddressImage from "./add-address.png";
+import ComfortCar from "./comfort-car.png";
+import BasicCar from "./basic-car.png";
+import PremiumCar from "./premium-car.png";
+import ToyotaCar from "./toyota-car.png";
 
 export {
   logoImage,
@@ -35,5 +39,9 @@ export {
   Truck,
   WalletBanner,
   AddPicture,
-  AddAddressImage
+  ComfortCar,
+  BasicCar,
+  PremiumCar,
+  AddAddressImage,
+  ToyotaCar
 };

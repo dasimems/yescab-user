@@ -20,6 +20,9 @@ import RatingDetails from "./RatingDetails";
 import ExtraRateDetails from "./ExtraRateDetails";
 import TripDetails from "./TripDetails";
 import AddAddress from "./AddAddress";
+import SelectDestination from "./SelectDestination";
+import SavedDestinations from "./SavedDestinations";
+import ScheduleRide from "./ScheduleRide";
 
 export {
   GettingStarted,
@@ -43,5 +46,8 @@ export {
   RatingDetails,
   ExtraRateDetails,
   TripDetails,
-  AddAddress
+  AddAddress,
+  SelectDestination,
+  SavedDestinations,
+  ScheduleRide
 };

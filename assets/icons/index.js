@@ -30,7 +30,8 @@ import {
   ArrowRightIcon,
   ChevronRight,
   Check,
-  Briefcase
+  Briefcase,
+  Calendar
 } from "lucide-react-native";
 import UserVerifiedIcon from "./iconoir_verified-user.svg";
 import { MaterialIcons } from "@expo/vector-icons";
@@ -268,6 +269,14 @@ export const Search = ({ size, color }) => {
 export const Menu = ({ size, color }) => {
   return (
     <MoreVertical
+      size={size ? size : 20}
+      color={color ? color : blackColor.default}
+    />
+  );
+};
+export const ScheduleIcon = ({ size, color }) => {
+  return (
+    <Calendar
       size={size ? size : 20}
       color={color ? color : blackColor.default}
     />

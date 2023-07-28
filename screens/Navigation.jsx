@@ -2,6 +2,7 @@ import { ScrollView, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import {
   Button,
+  CarSelect,
   LoggedInContainer,
   Logo,
   Map,
@@ -143,7 +144,8 @@ const Navigation = () => {
               </TouchableOpacity>
             </View>
           </View>
-          <SearchDestination />
+          {/* <SearchDestination /> */}
+          <CarSelect />
         </View>
       </LoggedInContainer>
     </>

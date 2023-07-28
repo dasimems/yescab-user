@@ -5,7 +5,7 @@ import { bauhs93, lato } from './fonts';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { AppContainer, CameraContainer, Modal, Providers, ScreenContainer } from './components';
-import { AddAddress, AddProfilePicture, ChatDetails, Chats, ChooseVehicle, Earnings, ExtraRateDetails, GettingStarted, GettingStartedTwo, History, Login, Navigation, NewBank, OTP, Profile, Rating, RatingDetails, Register,  TripDetails,  VehicleDetails, Wallet, Withdraw } from './screens';
+import { AddAddress, AddProfilePicture, ChatDetails, Chats, ChooseVehicle, Earnings, ExtraRateDetails, GettingStarted, GettingStartedTwo, History, Login, Navigation, NewBank, OTP, Profile, Rating, RatingDetails, Register,  SavedDestinations,  ScheduleRide,  SelectDestination,  TripDetails,  VehicleDetails, Wallet, Withdraw } from './screens';
 import { NavNames } from './data/general';
 
 
@@ -33,10 +33,12 @@ export default function App() {
         <AppContainer>
 
           <NavigationContainer >
-            <Stack.Navigator initialRouteName={NavNames.Navigation.name}>
+            <Stack.Navigator screenOptions={{
+              
+                  headerShown: false
+            }} initialRouteName={NavNames.Navigation.name}>
               <Stack.Group screenOptions={{
                   animation:"slide_from_right",
-                  headerShown: false
 
                 }}>
 
@@ -62,6 +64,14 @@ export default function App() {
                 <Stack.Screen name={NavNames.Chat.name} component={Chats} />
                 <Stack.Screen name={NavNames.ExtraRatingDetails.name} component={ExtraRateDetails} />
                 <Stack.Screen name={NavNames.ChatDetails.name} component={ChatDetails} />
+                <Stack.Screen name={NavNames.ScheduleRide.name} component={ScheduleRide} />
+              <Stack.Screen name={NavNames.SavedDestinations.name} component={SavedDestinations} />
+
+              </Stack.Group>
+              <Stack.Group screenOptions={{
+                animation: "slide_from_bottom"
+              }}>
+                <Stack.Screen name={NavNames.SelectDestination.name} component={SelectDestination} />
 
               </Stack.Group>
             </Stack.Navigator>

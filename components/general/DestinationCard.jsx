@@ -1,16 +1,22 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
 import { LocationPin } from "../../assets/icons";
 import { blackColor, primaryColor, whiteColor } from "../../assets/colors";
 import { lato } from "../../fonts";
 
-const DestinationCard = ({ icon, title, description }) => {
+const DestinationCard = ({ icon, title, action, description, hideBorder }) => {
+  if (!action || typeof action !== "function") {
+    action = () => {};
+  }
   return (
-    <View
+    <TouchableOpacity
+      onPress={action}
       style={{
         paddingVertical: 20,
         flexDirection: "row",
         gap: 10,
+        borderBottomWidth: !hideBorder ? 1 : 0,
+        borderBottomColor: blackColor.opacity100,
         alignItems: "center"
       }}
     >
@@ -50,7 +56,7 @@ const DestinationCard = ({ icon, title, description }) => {
             {description}
           </Text>}
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 

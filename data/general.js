@@ -99,10 +99,28 @@ export const NavNames = {
     navShown: true,
     Icon: TripsIcon
   },
+  SelectDestination: {
+    name: "SelectDestination",
+    label: "Select Destination",
+    navShown: true,
+    Icon: TripsIcon
+  },
+  SavedDestinations: {
+    name: "SavedDestinations",
+    label: "Saved Destinations",
+    navShown: true,
+    Icon: TripsIcon
+  },
 
   Chat: {
     name: "Chat",
     label: "Chat",
+    navShown: false,
+    Icon: ChatIcon
+  },
+  ScheduleRide: {
+    name: "ScheduleRide",
+    label: "Schedule Ride",
     navShown: false,
     Icon: ChatIcon
   },

@@ -5,6 +5,7 @@ import EarningChart from "./earnings/EarningChart";
 import AppContainer from "./general/AppContainer";
 import Button from "./general/Button";
 import CameraContainer from "./general/Camera";
+import CarSelectCard from "./general/CarSelectCard";
 import CountryFlag from "./general/CountryFlag";
 import CountryList from "./general/CountryList";
 import CountrySelectDetails from "./general/CountrySelectDetails";
@@ -22,6 +23,7 @@ import StatCard from "./general/inner/StatCard";
 import GettingStartedFooter from "./getting-started/GettingStartedFooter";
 import RegistrationFooter from "./getting-started/RegistrationFooter";
 import RegistrationHeader from "./getting-started/RegistrationHeader";
+import CarSelect from "./navigation/CarSelect";
 import Map from "./navigation/Map";
 import SearchDestination from "./navigation/SearchDestination";
 import ProfileDetailsCard from "./profile/ProfileDetailsCard";
@@ -75,5 +77,7 @@ export {
   Stats,
   StatCard,
   ProfileRoute,
-  SearchDestination
+  SearchDestination,
+  CarSelect,
+  CarSelectCard
 };

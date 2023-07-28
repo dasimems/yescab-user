@@ -5,8 +5,11 @@ import { lato } from "../../fonts";
 import FormInputField from "../general/FormInputField";
 import { Search } from "../../assets/icons";
 import DestinationCard from "../general/DestinationCard";
+import { useNavigation } from "@react-navigation/native";
+import { NavNames } from "../../data/general";
 
 const SearchDestination = () => {
+  const { navigate } = useNavigation();
   return (
     <View
       style={{
@@ -37,13 +40,13 @@ const SearchDestination = () => {
       >
         Where are you going?
       </Text>
-
-      <TouchableOpacity>
-        <FormInputField
-          floatLeftIcon={<Search color={blackColor.opacity500} />}
-          placeholder="Search Destination"
-        />
-      </TouchableOpacity>
+      <FormInputField
+        floatLeftIcon={<Search color={blackColor.opacity500} />}
+        placeholder="Search Destination"
+        onFocus={() => {
+          navigate(NavNames.SelectDestination.name);
+        }}
+      />
 
       <DestinationCard
         title="Ikeja City Mall"
