@@ -26,6 +26,7 @@ import ScheduleRide from "./ScheduleRide";
 import Schedules from "./Schedules";
 import AddCard from "./AddCard";
 import Refer from "./Refer";
+import EditProfile from "./EditProfile";
 
 export {
   GettingStarted,
@@ -55,5 +56,6 @@ export {
   ScheduleRide,
   Schedules,
   AddCard,
-  Refer
+  Refer,
+  EditProfile
 };

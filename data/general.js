@@ -198,6 +198,12 @@ export const NavNames = {
     navShown: false,
     Icon: StarIcon
   },
+  EditProfile: {
+    name: "EditProfile",
+    label: "Edit Profile",
+    navShown: false,
+    Icon: StarIcon
+  },
   TripDetails: {
     name: "TripDetails",
     label: "TripDetails",
