@@ -36,7 +36,7 @@ export default function App() {
             <Stack.Navigator screenOptions={{
               
                   headerShown: false
-            }} initialRouteName={NavNames.Navigation.name}>
+            }} initialRouteName={NavNames.GettingStarted.name}>
               <Stack.Group screenOptions={{
                   animation:"slide_from_right",
 

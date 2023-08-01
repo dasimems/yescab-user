@@ -151,8 +151,8 @@ const Navigation = () => {
               </TouchableOpacity>
             </View>
           </View>
-          {/* <SearchDestination /> */}
-          <CarSelect />
+          <SearchDestination />
+          {/* <CarSelect /> */}
         </View>
       </LoggedInContainer>
     </>
