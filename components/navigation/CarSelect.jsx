@@ -65,7 +65,7 @@ const CarSelect = () => {
         </Button>
         <TouchableOpacity
           onPress={() => {
-            openScheduleModal();
+            navigate(NavNames.ScheduleRide.name);
           }}
           style={{
             flexDirection: "row",

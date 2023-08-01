@@ -21,7 +21,7 @@ import { lato } from "../fonts";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import { trips } from "../data/tripsData";
 import { padding } from "../data/general";
-import { AngleLeft, AngleRight, Money, StarIcon } from "../assets/icons";
+import { AngleLeft, AngleRight, LocationDot, LocationPin, Money, StarIcon } from "../assets/icons";
 import { MaleAvatarOne } from "../assets/images";
 
 const TripDetails = () => {
@@ -52,29 +52,10 @@ const TripDetails = () => {
       showBackFunction
       headerTextStyle={16}
     >
-      <ScrollView showsHorizontalScrollIndicator={false}>
-        <Text
-          style={{
-            backgroundColor: "rgba(0, 0, 0, .05)",
-            textAlign: "center",
-            marginTop: 7,
-            fontSize: 12,
-            paddingVertical: 4,
-            paddingHorizontal: 10,
-            color:
-              details &&
-              details.status &&
-              details.status.toLowerCase() === "completed"
-                ? successColor.opacity800
-                : dangerColor.opacity800,
-          }}
-        >
-          {details &&
-          details.status &&
-          details.status.toLowerCase() === "completed"
-            ? "TRIP COMPLETED"
-            : "TRIP CANCELLED"}
-        </Text>
+      <ScrollView showsHorizontalScrollIndicator={false} contentContainerStyle={{
+        paddingVertical: 20,
+        gap: 20
+      }}>
 
         <View
           style={{
@@ -92,199 +73,199 @@ const TripDetails = () => {
 
         <View
           style={{
-            width: "100%",
-            height: 200,
-            backgroundColor: blackColor.opacity100,
-          }}
-        ></View>
-
-        <ProfileDetailsCard
-          title={
-            <>
-              <View
-                style={{
-                  flexDirection: "row",
-                  alignItems: "center",
-                  gap: 10,
-                }}
-              >
-                <Money color={primaryColor.default} />
-
-                <Text
-                  style={{
-                    fontFamily: lato.regular.default,
-                    color: blackColor.opacity600,
-                  }}
-                >
-                  Cash Payment
-                </Text>
-              </View>
-            </>
-          }
-          value={
-            <>
-              <Text
-                style={{
-                  fontFamily: lato.bold.default,
-                  color: blackColor.default,
-                }}
-              >
-                $8
-              </Text>
-            </>
-          }
-          style={{
-            paddingVertical: 20,
-            backgroundColor: primaryColor.opacity100,
-            paddingHorizontal: padding,
-          }}
-        />
-
-        <View
-          style={{
             paddingHorizontal: padding,
             paddingVertical: 15,
             gap: 20,
           }}
         >
+           <View
+          style={{
+            flexDirection: "row",
+            justifyContent: "space-between",
+            gap: 10,
+          }}
+        >
           <View
             style={{
               flexDirection: "row",
-              alignItems: "center",
               justifyContent: "space-between",
-            }}
-          >
-            <Text
-              style={{
-                fontFamily: lato.bold.default,
-              }}
-            >
-              Distance
-            </Text>
-            <Text
-              style={{
-                fontFamily: lato.regular.default,
-                color: blackColor.opacity600,
-              }}
-            >
-              10.4km
-            </Text>
-          </View>
-
-          <View
-            style={{
-              flexDirection: "row",
-              alignItems: "center",
-              justifyContent: "space-between",
-            }}
-          >
-            <Text
-              style={{
-                fontFamily: lato.bold.default,
-              }}
-            >
-              Duration
-            </Text>
-            <Text
-              style={{
-                fontFamily: lato.regular.default,
-                color: blackColor.opacity600,
-              }}
-            >
-              20 mins
-            </Text>
-          </View>
-
-          <View
-            style={{
-              flexDirection: "row",
-              alignItems: "center",
-              justifyContent: "space-between",
+              gap: 10,
             }}
           >
             <View
               style={{
-                flexDirection: "row",
+                height: 100,
+                justifyContent: "space-between",
                 alignItems: "center",
-                gap: 6,
+                gap: 5,
               }}
             >
-              <RoundedImage image={MaleAvatarOne} size={40} />
-
-              <Text
+              <LocationDot color={primaryColor.opacity500} />
+              <View
                 style={{
-                  fontFamily: lato.bold.default,
-                  color: blackColor.opacity600,
+                  flex: 1,
+                  gap: 5,
                 }}
               >
-                {details?.passengerName}
-              </Text>
+                <View
+                  style={{
+                    flex: 1 / 4,
+                    width: 3,
+                    backgroundColor: primaryColor.opacity200,
+                    borderRadius: 10,
+                  }}
+                ></View>
+                <View
+                  style={{
+                    flex: 1 / 4,
+                    width: 3,
+                    backgroundColor: primaryColor.opacity200,
+                    borderRadius: 10,
+                  }}
+                ></View>
+                <View
+                  style={{
+                    flex: 1 / 4,
+                    width: 3,
+                    backgroundColor: primaryColor.opacity200,
+                    borderRadius: 10,
+                  }}
+                ></View>
+                <View
+                  style={{
+                    flex: 1 / 4,
+                    width: 3,
+                    backgroundColor: primaryColor.opacity200,
+                    borderRadius: 10,
+                  }}
+                ></View>
+              </View>
+              <LocationPin color={primaryColor.default} />
             </View>
 
             <View
               style={{
-                flexDirection: "row",
-                alignItems: "center",
-                gap: 3,
+                justifyContent: "space-between",
               }}
             >
-              <StarIcon size={12} color="#FFBA40" set="bold" />
+              <View>
 
+                <Text
+                  style={{
+                    fontFamily: lato.bold.default,
+                  }}
+                >
+                  Ikeja City Hall
+                </Text>
+                <Text
+                  style={{
+                    fontFamily: lato.regular.default,
+                    color: blackColor.opacity600
+                  }}
+                >
+                 Obafemi Awolowo Way, Ikeja Nigeria
+                </Text>
+              </View>
+
+              <View>
+                <Text
+                  style={{
+                    fontFamily: lato.bold.default,
+                  }}
+                >
+                  Shoprite Event Center
+                </Text>
+                <Text
+                  style={{
+                    fontFamily: lato.regular.default,
+                    color: blackColor.opacity600
+                  }}
+                >
+                  Shoprite Road, Alausa Ikeja
+                </Text>
+
+              </View>
+            </View>
+          </View>
+
+          <View
+            style={{
+              justifyContent: "space-between",
+            }}
+          >
+            <View>
+              <Text
+                style={{
+                  fontFamily: lato.regular.default,
+                  color: primaryColor.default,
+                }}
+              >
+                Pick up
+                
+              </Text>
               <Text
                 style={{
                   fontFamily: lato.regular.default,
                   color: blackColor.opacity600,
                 }}
               >
-                {4.9}
+                4:30pm
+                
+              </Text>
+
+            </View>
+
+            <View>
+
+              <Text
+                style={{
+                  fontFamily: lato.regular.default,
+                  color: primaryColor.default,
+                }}
+              >
+                Drop-Off
+              </Text>
+              <Text
+                style={{
+                  fontFamily: lato.regular.default,
+                  color: blackColor.opacity600,
+                }}
+              >
+                4:30pm
               </Text>
             </View>
           </View>
         </View>
-
-        <View
-          style={{
-            backgroundColor: "rgba(0,0,0,.07)",
-            paddingVertical: 20,
-            paddingHorizontal: padding,
-          }}
-        >
-          <Text
-            style={{
-              fontFamily: lato.regular.default,
-              color: blackColor.opacity700,
-            }}
-          >
-            Need Help?
-          </Text>
         </View>
 
+
         <View
           style={{
             paddingHorizontal: padding,
+            alignItems: "center",
+            gap: 10,
+            paddingTop: 20
           }}
         >
-          <ProfileDetailsCard
-            style={{
-              ...styles.actionStyle,
-            }}
-            title="Passenger lost an item"
-            value={<AngleRight color={blackColor.opacity700} />}
-          />
-          <ProfileDetailsCard
-            style={{
-              ...styles.actionStyle,
-            }}
-            title="Passenger was rude"
-            value={<AngleRight color={blackColor.opacity700} />}
-          />
-          <ProfileDetailsCard
-            style={{
-              ...styles.actionStyle,
-            }}
-            title="Security Issues"
-            value={<AngleRight color={blackColor.opacity700} />}
-          />
+          <RoundedImage size={100} />
+          <Text style={{
+            fontFamily: lato.regular.default,
+            color: blackColor.opacity600,
+          }}>You rode with David Seyi</Text>
+          <View style={{
+            flexDirection: "row",
+            gap: 10
+
+          }}>
+
+            {new Array(5).fill("t").map((_, index)=>(
+              <StarIcon  set="bold" color="#FFBA40" key={index} />
+            ))}
+          </View>
+          <Text style={{
+            fontFamily: lato.bold.default,
+            fontSize: 16
+          }}>$8</Text>
         </View>
       </ScrollView>
     </LoggedInContainer>

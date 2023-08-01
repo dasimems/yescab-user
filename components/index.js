@@ -25,6 +25,7 @@ import RegistrationFooter from "./getting-started/RegistrationFooter";
 import RegistrationHeader from "./getting-started/RegistrationHeader";
 import CarSelect from "./navigation/CarSelect";
 import Map from "./navigation/Map";
+import RideBooked from "./navigation/RideBooked";
 import SearchDestination from "./navigation/SearchDestination";
 import ProfileDetailsCard from "./profile/ProfileDetailsCard";
 import ProfileRoute from "./profile/ProfileRoute";
@@ -79,5 +80,6 @@ export {
   ProfileRoute,
   SearchDestination,
   CarSelect,
-  CarSelectCard
+  CarSelectCard,
+  RideBooked
 };

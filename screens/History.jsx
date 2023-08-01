@@ -20,7 +20,7 @@ const History = () => {
   }, [activeTripType])
 
   return (
-    <LoggedInContainer headerText="Trip History">
+    <LoggedInContainer showBackFunction headerText="History">
       <View style={{
         marginTop: 10,
         flex: 1

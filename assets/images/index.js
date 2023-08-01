@@ -20,6 +20,7 @@ import ComfortCar from "./comfort-car.png";
 import BasicCar from "./basic-car.png";
 import PremiumCar from "./premium-car.png";
 import ToyotaCar from "./toyota-car.png";
+import RideBookedImage from "./ride-booked.png";
 
 export {
   logoImage,
@@ -43,5 +44,6 @@ export {
   BasicCar,
   PremiumCar,
   AddAddressImage,
-  ToyotaCar
+  ToyotaCar,
+  RideBookedImage
 };

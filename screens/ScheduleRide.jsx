@@ -6,12 +6,13 @@ import {
   TouchableOpacity,
   View
 } from "react-native";
-import React from "react";
+import React, { useCallback } from "react";
 import {
   Button,
   LoggedInContainer,
   Logo,
   Nav,
+  RideBooked,
   RoundedImage
 } from "../components";
 import { blackColor, primaryColor, whiteColor } from "../assets/colors";
@@ -25,6 +26,8 @@ import {
   StarIcon
 } from "../assets/icons";
 import { ToyotaCar } from "../assets/images";
+import { useActionContext } from "../context";
+import { NavNames } from "../data/general";
 
 const ScheduleDetails = ({ title, value }) => {
   return (
@@ -56,6 +59,17 @@ const ScheduleDetails = ({ title, value }) => {
 
 const ScheduleRide = () => {
   const { navigate } = useNavigation();
+  const { openModal, closeModal } = useActionContext();
+
+  const rideBooked = useCallback(() => {
+    openModal({
+      content: <RideBooked />
+    });
+    setTimeout(() => {
+      closeModal();
+      navigate(NavNames.Navigation.name);
+    }, 3000);
+  }, []);
   return (
     <LoggedInContainer showBackFunction headerText="Schedule Ride">
       <ScrollView contentContainerStyle={{ gap: 20, paddingVertical: 20 }}>
@@ -273,7 +287,7 @@ const ScheduleRide = () => {
       </ScrollView>
 
       <View style={{ paddingVertical: 20 }}>
-        <Button>
+        <Button onPress={rideBooked}>
           <Text style={{ color: whiteColor.default }}>Schedule</Text>
         </Button>
       </View>

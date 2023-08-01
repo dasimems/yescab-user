@@ -50,7 +50,8 @@ import {
   Logout as LogoutIconly,
   Document,
   Camera,
-  Image2
+  Image2,
+  Notification
 } from "react-native-iconly";
 import { X } from "lucide-react-native";
 import { Entypo } from "@expo/vector-icons";
@@ -68,6 +69,15 @@ export const Settings = ({ size, color }) => {
 export const Dashboard = ({ size, color }) => {
   return (
     <Home size={size ? size : 20} color={color ? color : blackColor.default} />
+  );
+};
+export const NotificationIcon = ({ size, color, set }) => {
+  return (
+    <Notification
+      size={size ? size : 20}
+      set={set ? "bold" : "light"}
+      color={color ? color : blackColor.default}
+    />
   );
 };
 export const WorkIcon = ({ size, color }) => {
