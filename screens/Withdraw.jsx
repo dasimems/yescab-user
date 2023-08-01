@@ -1,17 +1,19 @@
 import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
-import React from "react";
-import { BankList, Button, FormInputField, LoggedInContainer, Logo, Nav, TransactionCard } from "../components";
+import React, { useState } from "react";
+import { BankCard, BankList, Button, FormInputField, LoggedInContainer, Logo, Nav, TransactionCard } from "../components";
 import { blackColor, dangerColor, grayColor, infoColor, primaryColor, whiteColor } from "../assets/colors";
 import { lato } from "../fonts";
 import { useNavigation } from "@react-navigation/native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { NavNames, padding } from "../data/general";
 import { TouchableOpacity } from "react-native";
-import { AddCircle, AngleLeft, AngleRight, SubtractIconCircle } from "../assets/icons";
-import { Coin, WalletBackground, WalletBanner } from "../assets/images";
+import { AddCircle, AngleLeft, AngleRight, Money, SubtractIconCircle } from "../assets/icons";
+import { Coin, CreditCardIcon, WalletBackground, WalletBanner } from "../assets/images";
 
 const Header = () => {
     const {goBack, navigate} = useNavigation();
+
+    
     return(
 
         <>
@@ -42,7 +44,7 @@ const Header = () => {
                         <Text style={{
                             fontFamily: lato.bold.default,
                             fontSize: 20,
-                        }}>Withdraw</Text>
+                        }}>Payment Methods</Text>
 
                     </View>
                         
@@ -76,130 +78,87 @@ const Header = () => {
 
 const Withdraw = () => {
   const { navigate, goBack } = useNavigation();
+  const [bank, setBank] = useState("")
+
   return (
-    <LoggedInContainer removeSafeView headerHidden containerStyle={{
-        paddingHorizontal: 0
-    }} >
+    <LoggedInContainer showBackFunction headerText="Payment Methods" >
 
         <View style={{
-            flex: 1
+            flex: 1,
+            paddingBottom: 15
             
         }}>
 
-            <View style={{
-                width: "100%",
-                height: 300,
-                overflow: "hidden",
-            }}>
-
-                <Image source={WalletBanner} style={{
-                    ...StyleSheet.absoluteFillObject,
-                    height: "100%",
-                    width: "100%"
-                }} />
-
-                <Header />
-
-                <View style={{
-                    flex: 1,
-                    justifyContent: "center",
-                    // backgroundColor: "red",
-                    paddingBottom: 50,
-                }}>
-
-                    <View style={{
-                        
-                        flexDirection: "row",
-                        alignItems: 'center',
-                        justifyContent: "center"
-                    }}>
-
-                        <Text style={{
-                            ...styles.walletBannerTextStyle,
-                            color: blackColor.opacity400
-                        }}>Available Balance is </Text>
-                        <Text style={{
-                            ...styles.walletBannerTextStyle
-                        }}>$7,500</Text>
-                    </View>
-
-                </View>
-
-
-            </View>
-
-            <View style={{
-                alignItems: "center",
-                marginTop: -29,
-            }}>
-                <FormInputField inputMode="numeric" keyboardType="number-pad" placeholder="Enter Amount($)" style={{
-                    width: "100%",
-                    maxWidth: 270,
-
-                }} inputStyle={{
-                    textAlign: "center",
-                    borderColor: "rgba(0, 0, 0, .06)",
-                    backgroundColor: whiteColor.default
-                }} />
-            </View>
+            <Text style={{
+                fontFamily: lato.regular.default,
+                color: blackColor.opacity500,
+                marginTop: 10
+            }}>Choose your preferred payment method</Text>
 
             <View style={{
                 flex: 1,
-                padding,
-                paddingTop: 30
+                marginTop: 15
             }}>
 
 
 
                 <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{
-                    gap: 25
+                    gap: 15
                 }}>
-                    <View style={{
-                        flexDirection: "row",
-                        alignItems: "center",
+
+                    <BankCard activeId={""} id={"Cash"} onChange={()=>{setBank(cash)}} bankName={"Cash"}/>
+
+                    <BankList onChange={(bank)=>{setBank(bank)}} />
+
+                    <TouchableOpacity onPress={()=>{
+                        navigate(NavNames.AddCard.name)
+                    }} style={{
                         justifyContent: "space-between",
+                        alignItems: "center",
+                        flexDirection: "row",
                     }}>
-    
-                        <Text style={{
-                            fontFamily: lato.bold.default,
-                            color: blackColor.opacity600
-                        }}>Choose bank account</Text>
-    
-                        <TouchableOpacity onPress={()=>{
-                            navigate(NavNames.NewBank.name)
+
+                        <View style={{
+                            flexDirection: "row",
+                            alignItems: "center",
+                            gap: 10
                         }}>
+
+                            <CreditCardIcon size={28} />
+
                             <Text style={{
                                 fontFamily: lato.regular.default,
-                                color: primaryColor.opacity500
-                            }}>Add new</Text>
-    
-                        </TouchableOpacity>
-    
-                    </View>
 
-                    <BankList />
+                            }}>Add payment Card</Text>
+
+                        </View>
+
+                        <AngleRight />
 
 
+                    </TouchableOpacity>
 
-                    <View style={{
-                        paddingVertical: 20,
-                    }}>  
 
-                        <Button loaderSize={17} loadingStyle={{
-                            
-                            backgroundColor: primaryColor.opacity500,
 
-                        }} textColor={whiteColor.default} style={{
-                            backgroundColor: primaryColor.default,
-                        }} text="Withdraw" />
-                    </View>
                 </ScrollView>
 
             </View>
 
+            <TouchableOpacity style={{
+                paddingVertical: 17,
+                paddingHorizontal: 20,
+                backgroundColor: bank && bank !== "" ? primaryColor.default : primaryColor.opacity700,
+                borderRadius: 10,
+                justifyContent: "center",
+                alignItems: "center"
 
-
-
+                
+            }}>
+                <Text style={{
+                    color: bank && bank !== ""? whiteColor.default : whiteColor.opacity600,
+                    fontFamily: lato.bold.default
+                }}>Continue</Text>
+            </TouchableOpacity>
            
 
         </View>

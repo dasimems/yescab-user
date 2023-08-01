@@ -56,6 +56,8 @@ import {
 import { X } from "lucide-react-native";
 import { Entypo } from "@expo/vector-icons";
 import { MenuIcon } from "lucide-react-native";
+import { CreditCard } from "lucide-react-native";
+import { Info } from "lucide-react-native";
 
 export const Settings = ({ size, color }) => {
   return (
@@ -71,6 +73,31 @@ export const Dashboard = ({ size, color }) => {
     <Home size={size ? size : 20} color={color ? color : blackColor.default} />
   );
 };
+
+export const CalendarIcon = ({ size, color }) => {
+  return (
+    <Calendar
+      size={size ? size : 20}
+      color={color ? color : blackColor.default}
+    />
+  );
+};
+
+export const CreditCardIcon = ({ size, color }) => {
+  return (
+    <CreditCard
+      size={size ? size : 20}
+      color={color ? color : blackColor.default}
+    />
+  );
+};
+
+export const InfoIcon = ({ size, color }) => {
+  return (
+    <Info size={size ? size : 20} color={color ? color : blackColor.default} />
+  );
+};
+
 export const NotificationIcon = ({ size, color, set }) => {
   return (
     <Notification

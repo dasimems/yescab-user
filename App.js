@@ -5,7 +5,7 @@ import { bauhs93, lato } from './fonts';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { AppContainer, CameraContainer, Modal, Providers, ScreenContainer } from './components';
-import { AddAddress, AddProfilePicture, ChatDetails, Chats, ChooseVehicle, Earnings, ExtraRateDetails, GettingStarted, GettingStartedTwo, History, Login, Navigation, NewBank, OTP, Profile, Rating, RatingDetails, Register,  SavedDestinations,  ScheduleRide,  Schedules,  SelectDestination,  TripDetails,  VehicleDetails, Wallet, Withdraw } from './screens';
+import { AddAddress, AddCard, AddProfilePicture, ChatDetails, Chats, ChooseVehicle, Earnings, ExtraRateDetails, GettingStarted, GettingStartedTwo, History, Login, Navigation, NewBank, OTP, Profile, Rating, RatingDetails, Register,  SavedDestinations,  ScheduleRide,  Schedules,  SelectDestination,  TripDetails,  VehicleDetails, Wallet, Withdraw } from './screens';
 import { NavNames } from './data/general';
 
 
@@ -36,7 +36,7 @@ export default function App() {
             <Stack.Navigator screenOptions={{
               
                   headerShown: false
-            }} initialRouteName={NavNames.Schedules.name}>
+            }} initialRouteName={NavNames.Withdraw.name}>
               <Stack.Group screenOptions={{
                   animation:"slide_from_right",
 
@@ -45,6 +45,7 @@ export default function App() {
                 <Stack.Screen name={NavNames.GettingStarted.name} component={GettingStarted} />
                 <Stack.Screen name={NavNames.AddAddress.name} component={AddAddress} />
                 <Stack.Screen name={NavNames.GettingStarted2.name} component={GettingStartedTwo} />
+                <Stack.Screen name={NavNames.AddCard.name} component={AddCard} />
                 <Stack.Screen name={NavNames.Schedules.name} component={Schedules} />
                 <Stack.Screen name={NavNames.Earnings.name} component={Earnings} />
                 <Stack.Screen name={NavNames.Withdraw.name} component={Withdraw} />

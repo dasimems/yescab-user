@@ -130,6 +130,12 @@ export const NavNames = {
     navShown: false,
     Icon: ChatIcon
   },
+  AddCard: {
+    name: "AddCard",
+    label: "Add Card",
+    navShown: false,
+    Icon: ChatIcon
+  },
   // Settings: {
   //   name: "Settings",
   //   label: "Settings",

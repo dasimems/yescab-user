@@ -21,6 +21,9 @@ import BasicCar from "./basic-car.png";
 import PremiumCar from "./premium-car.png";
 import ToyotaCar from "./toyota-car.png";
 import RideBookedImage from "./ride-booked.png";
+import MasterCardIcon from "./master_card_icon.svg";
+import CreditCardIcon from "./credit_card.svg";
+import CardDesign from "./card-design.png";
 
 export {
   logoImage,
@@ -45,5 +48,8 @@ export {
   PremiumCar,
   AddAddressImage,
   ToyotaCar,
-  RideBookedImage
+  RideBookedImage,
+  MasterCardIcon,
+  CreditCardIcon,
+  CardDesign
 };
