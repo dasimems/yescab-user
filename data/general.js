@@ -136,6 +136,12 @@ export const NavNames = {
     navShown: false,
     Icon: ChatIcon
   },
+  Refer: {
+    name: "Refer",
+    label: "Refer and Earn",
+    navShown: false,
+    Icon: ChatIcon
+  },
   // Settings: {
   //   name: "Settings",
   //   label: "Settings",

@@ -24,6 +24,7 @@ import RideBookedImage from "./ride-booked.png";
 import MasterCardIcon from "./master_card_icon.svg";
 import CreditCardIcon from "./credit_card.svg";
 import CardDesign from "./card-design.png";
+import ReferEarnImage from "./refer-earn.png";
 
 export {
   logoImage,
@@ -51,5 +52,6 @@ export {
   RideBookedImage,
   MasterCardIcon,
   CreditCardIcon,
-  CardDesign
+  CardDesign,
+  ReferEarnImage
 };

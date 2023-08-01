@@ -25,6 +25,7 @@ import SavedDestinations from "./SavedDestinations";
 import ScheduleRide from "./ScheduleRide";
 import Schedules from "./Schedules";
 import AddCard from "./AddCard";
+import Refer from "./Refer";
 
 export {
   GettingStarted,
@@ -53,5 +54,6 @@ export {
   SavedDestinations,
   ScheduleRide,
   Schedules,
-  AddCard
+  AddCard,
+  Refer
 };
