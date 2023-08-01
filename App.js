@@ -5,7 +5,7 @@ import { bauhs93, lato } from './fonts';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { AppContainer, CameraContainer, Modal, Providers, ScreenContainer } from './components';
-import { AddAddress, AddCard, AddProfilePicture, ChangePassword, ChatDetails, Chats, ChooseVehicle, Earnings, EditProfile, ExtraRateDetails, GettingStarted, GettingStartedTwo, History, Login, Navigation, NewBank, OTP, Profile, Rating, RatingDetails, Refer, Register,  SavedDestinations,  ScheduleRide,  Schedules,  SelectDestination,  TripDetails,  VehicleDetails, Wallet, Withdraw } from './screens';
+import { AddAddress, AddCard, AddProfilePicture, ChangePassword, ChatDetails, Chats, ChooseVehicle, Earnings, EditProfile, ExtraRateDetails, GettingStarted, GettingStartedTwo, History, Login, Navigation, NewBank, OTP, Profile, Rating, RatingDetails, Refer, Register,  SavedDestinations,  ScheduleRide,  Schedules,  SelectDestination,  Support,  TripDetails,  VehicleDetails, Wallet, Withdraw } from './screens';
 import { NavNames } from './data/general';
 
 
@@ -48,6 +48,7 @@ export default function App() {
                 <Stack.Screen name={NavNames.EditProfile.name} component={EditProfile} />
                 <Stack.Screen name={NavNames.GettingStarted2.name} component={GettingStartedTwo} />
                 <Stack.Screen name={NavNames.AddCard.name} component={AddCard} />
+                <Stack.Screen name={NavNames.Support.name} component={Support} />
                 <Stack.Screen name={NavNames.Refer.name} component={Refer} />
                 <Stack.Screen name={NavNames.Schedules.name} component={Schedules} />
                 <Stack.Screen name={NavNames.Earnings.name} component={Earnings} />

@@ -1,12 +1,17 @@
 import { Dimensions } from "react-native";
 import {
+  CalendarIcon,
   CarIcon,
   ChatIcon,
+  CreditCardIcon,
   Dashboard,
+  HistoryIcon,
   Menu,
   NavigationIcon,
+  PeopleIcon,
   Settings,
   StarIcon,
+  SupportIcon,
   TripsIcon,
   UserIcon,
   Wallet
@@ -30,32 +35,15 @@ export const NavNames = {
     navShown: false,
     Icon: Menu
   },
-  Signup: {
-    name: "SignUp",
-    label: "Sign Up",
-    navShown: false,
-    Icon: Menu
-  },
-
-  Login: {
-    name: "Login",
-    label: "Login",
-    navShown: false,
-    Icon: Menu
-  },
-
+  Signup: { name: "SignUp", label: "Sign Up", navShown: false, Icon: Menu },
+  Login: { name: "Login", label: "Login", navShown: false, Icon: Menu },
   Register: {
     name: "Register",
     label: "Register",
     navShown: false,
     Icon: Menu
   },
-  OTP: {
-    name: "OTP",
-    label: "OTP",
-    navShown: false,
-    Icon: Menu
-  },
+  OTP: { name: "OTP", label: "OTP", navShown: false, Icon: Menu },
   AddProfilePicture: {
     name: "AddProfilePicture",
     label: "Add Profile Picture",
@@ -77,56 +65,79 @@ export const NavNames = {
   Navigation: {
     name: "Navigation",
     label: "Navigation",
-    navShown: true,
+    navShown: false,
     Icon: Dashboard
   },
   Earnings: {
     name: "Earnings",
     label: "Earnings",
-    navShown: true,
+    navShown: false,
     Icon: Wallet
   },
-
   History: {
     name: "History",
     label: "History",
     navShown: true,
-    Icon: TripsIcon
+    Icon: HistoryIcon
+  },
+  Schedules: {
+    name: "Schedules",
+    label: "Schedules",
+    navShown: true,
+    Icon: CalendarIcon
+  },
+  Wallet: {
+    name: "withdraw",
+    label: "Withdraw",
+    navShown: false,
+    Icon: CreditCardIcon
+  },
+  Withdraw: {
+    name: "Payments",
+    label: "Payments",
+    navShown: true,
+    Icon: CreditCardIcon
+  },
+  Refer: {
+    name: "Refer",
+    label: "Refer and Earn",
+    navShown: true,
+    Icon: PeopleIcon
+  },
+  Profile: {
+    name: "Settings",
+    label: "Settings",
+    navShown: true,
+    Icon: Settings
+  },
+  Support: {
+    name: "Support",
+    label: "Support",
+    navShown: true,
+    Icon: SupportIcon
   },
   AddAddress: {
     name: "AddAddress",
     label: "AddAddress",
-    navShown: true,
+    navShown: false,
     Icon: TripsIcon
   },
   SelectDestination: {
     name: "SelectDestination",
     label: "Select Destination",
-    navShown: true,
+    navShown: false,
     Icon: TripsIcon
   },
   SavedDestinations: {
     name: "SavedDestinations",
     label: "Saved Destinations",
-    navShown: true,
+    navShown: false,
     Icon: TripsIcon
   },
-
-  Chat: {
-    name: "Chat",
-    label: "Chat",
-    navShown: false,
-    Icon: ChatIcon
-  },
+  Chat: { name: "Chat", label: "Chat", navShown: false, Icon: ChatIcon },
   ScheduleRide: {
     name: "ScheduleRide",
     label: "Schedule Ride",
-    navShown: false,
-    Icon: ChatIcon
-  },
-  Schedules: {
-    name: "Schedules",
-    label: "Schedules",
     navShown: false,
     Icon: ChatIcon
   },
@@ -135,16 +146,7 @@ export const NavNames = {
     label: "Add Card",
     navShown: false,
     Icon: ChatIcon
-  },
-  Refer: {
-    name: "Refer",
-    label: "Refer and Earn",
-    navShown: false,
-    Icon: ChatIcon
-  },
-  // Settings: {
-  //   name: "Settings",
-  //   label: "Settings",
+  }, //   label: "Settings", //   name: "Settings", // Settings: {
   //   navShown: true,
   //   Icon: Settings
   // },
@@ -155,37 +157,13 @@ export const NavNames = {
     navShown: false,
     Icon: ChatIcon
   },
-  Wallet: {
-    name: "Wallet",
-    label: "Wallet",
-    navShown: false,
-    Icon: Wallet
-  },
-  Withdraw: {
-    name: "Withdraw",
-    label: "Withdraw",
-    navShown: false,
-    Icon: Wallet
-  },
   NewBank: {
     name: "NewBank",
     label: "Add Bank",
     navShown: false,
     Icon: Wallet
   },
-  Rating: {
-    name: "Rating",
-    label: "Rating",
-    navShown: false,
-    Icon: CarIcon
-  },
-
-  Profile: {
-    name: "Profile",
-    label: "Profile",
-    navShown: true,
-    Icon: Settings
-  },
+  Rating: { name: "Rating", label: "Rating", navShown: false, Icon: CarIcon },
   RatingDetails: {
     name: "RatingDetails",
     label: "Rating Details",

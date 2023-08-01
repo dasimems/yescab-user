@@ -28,6 +28,7 @@ import AddCard from "./AddCard";
 import Refer from "./Refer";
 import EditProfile from "./EditProfile";
 import ChangePassword from "./ChangePassword";
+import Support from "./Support";
 
 export {
   GettingStarted,
@@ -59,5 +60,6 @@ export {
   AddCard,
   Refer,
   EditProfile,
-  ChangePassword
+  ChangePassword,
+  Support
 };

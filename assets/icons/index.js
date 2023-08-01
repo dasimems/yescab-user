@@ -58,6 +58,8 @@ import { Entypo } from "@expo/vector-icons";
 import { MenuIcon } from "lucide-react-native";
 import { CreditCard } from "lucide-react-native";
 import { Info } from "lucide-react-native";
+import { History } from "lucide-react-native";
+import { Users } from "lucide-react-native";
 
 export const Settings = ({ size, color }) => {
   return (
@@ -82,6 +84,14 @@ export const CalendarIcon = ({ size, color }) => {
     />
   );
 };
+export const HistoryIcon = ({ size, color }) => {
+  return (
+    <History
+      size={size ? size : 20}
+      color={color ? color : blackColor.default}
+    />
+  );
+};
 
 export const CreditCardIcon = ({ size, color }) => {
   return (
@@ -89,6 +99,20 @@ export const CreditCardIcon = ({ size, color }) => {
       size={size ? size : 20}
       color={color ? color : blackColor.default}
     />
+  );
+};
+export const SupportIcon = ({ size, color }) => {
+  return (
+    <MaterialIcons
+      name="support-agent"
+      size={size ? size : 20}
+      color={color ? color : blackColor.default}
+    />
+  );
+};
+export const PeopleIcon = ({ size, color }) => {
+  return (
+    <Users size={size ? size : 20} color={color ? color : blackColor.default} />
   );
 };
 

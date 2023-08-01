@@ -1,5 +1,5 @@
 import { ScrollView, StyleSheet, Text, View } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import {
   Button,
   CarSelect,
@@ -22,70 +22,75 @@ import { StatusBar } from "expo-status-bar";
 const Header = () => {
   const { navigate } = useNavigation();
   return (
-    <View
-      style={{
-        flexDirection: "row",
-        gap: 10,
-        justifyContent: "space-between",
-        alignItems: "center",
-        paddingHorizontal: padding,
-        paddingVertical: 15
-      }}
-    >
-      <TouchableOpacity
-        onPress={() => {
-          navigate(NavNames.Profile.name);
-        }}
-      >
-        <RoundedImage image={MaleAvatarOne} size={45} />
-      </TouchableOpacity>
-
+    <>
       <View
         style={{
-          padding: 5,
-          backgroundColor: primaryColor.default,
-          borderRadius: 20,
           flexDirection: "row",
+          gap: 10,
+          justifyContent: "space-between",
           alignItems: "center",
-          gap: 10
+          paddingHorizontal: padding,
+          paddingVertical: 15
         }}
       >
-        <Text
-          style={{
-            fontFamily: lato.regular.default,
-            color: whiteColor.default,
-            marginLeft: 10
+        <TouchableOpacity
+          onPress={() => {
+            navigate(NavNames.Profile.name);
           }}
         >
-          Online
-        </Text>
+          <RoundedImage image={MaleAvatarOne} size={45} />
+        </TouchableOpacity>
 
         <View
           style={{
-            width: 25,
-            height: 25,
-            borderRadius: 25,
-            backgroundColor: whiteColor.default,
+            padding: 5,
+            backgroundColor: primaryColor.default,
+            borderRadius: 20,
+            flexDirection: "row",
             alignItems: "center",
-            justifyContent: "center"
+            gap: 10
           }}
         >
-          <CarIcon size={17} color={primaryColor.default} />
-        </View>
-      </View>
+          <Text
+            style={{
+              fontFamily: lato.regular.default,
+              color: whiteColor.default,
+              marginLeft: 10
+            }}
+          >
+            Online
+          </Text>
 
-      <TouchableOpacity>
-        <Search color={blackColor.opacity500} />
-      </TouchableOpacity>
-    </View>
+          <View
+            style={{
+              width: 25,
+              height: 25,
+              borderRadius: 25,
+              backgroundColor: whiteColor.default,
+              alignItems: "center",
+              justifyContent: "center"
+            }}
+          >
+            <CarIcon size={17} color={primaryColor.default} />
+          </View>
+        </View>
+
+        <TouchableOpacity>
+          <Search color={blackColor.opacity500} />
+        </TouchableOpacity>
+      </View>
+    </>
   );
 };
 
 const Navigation = () => {
   const { navigate } = useNavigation();
+  const [navOpened, setNavOpened] = useState(false)
   return (
 
     <>
+    
+      <Nav onClose={()=>{setNavOpened(false)}} opened={navOpened} />
       <LoggedInContainer
         headerHidden
         containerStyle={{
@@ -93,7 +98,9 @@ const Navigation = () => {
         }}
       >
 
-        <TouchableOpacity style={{
+        <TouchableOpacity onPress={()=>{
+          setNavOpened(true)
+        }} style={{
           width: 40,
           height: 40,
           backgroundColor: whiteColor.default,
