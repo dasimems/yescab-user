@@ -27,6 +27,7 @@ import Schedules from "./Schedules";
 import AddCard from "./AddCard";
 import Refer from "./Refer";
 import EditProfile from "./EditProfile";
+import ChangePassword from "./ChangePassword";
 
 export {
   GettingStarted,
@@ -57,5 +58,6 @@ export {
   Schedules,
   AddCard,
   Refer,
-  EditProfile
+  EditProfile,
+  ChangePassword
 };

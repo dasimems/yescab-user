@@ -204,6 +204,12 @@ export const NavNames = {
     navShown: false,
     Icon: StarIcon
   },
+  ChangePassword: {
+    name: "ChangePassword",
+    label: "Change Password",
+    navShown: false,
+    Icon: StarIcon
+  },
   TripDetails: {
     name: "TripDetails",
     label: "TripDetails",

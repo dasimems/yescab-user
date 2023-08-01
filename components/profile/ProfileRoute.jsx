@@ -3,14 +3,22 @@ import React from "react";
 import { AngleRight, UserVerified } from "../../assets/icons";
 import { lato } from "../../fonts";
 import { blackColor } from "../../assets/colors";
+import { useNavigation } from "@react-navigation/native";
 
 const ProfileRoute = ({ icon, title, description, name, titleStyle }) => {
+  const { navigate } = useNavigation();
   return (
     <TouchableOpacity
+      onPress={() => {
+        if (name) {
+          navigate(name);
+        }
+      }}
       style={{
         flexDirection: "row",
         alignItems: "center",
-        justifyContent: "space-between"
+        justifyContent: "space-between",
+        paddingVertical: 15
       }}
     >
       <View
@@ -20,7 +28,7 @@ const ProfileRoute = ({ icon, title, description, name, titleStyle }) => {
           gap: 10
         }}
       >
-        {icon ? icon : <UserVerified />}
+        {/* {icon ? icon : <UserVerified />} */}
 
         <View
           style={{

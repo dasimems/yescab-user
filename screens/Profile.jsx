@@ -3,7 +3,7 @@ import {
   StyleSheet,
   Text,
   TouchableOpacity,
-  View,
+  View
 } from "react-native";
 import React from "react";
 import {
@@ -14,21 +14,56 @@ import {
   ProfileDetailsCard,
   ProfileRoute,
   RoundedImage,
-  Stats,
+  Stats
 } from "../components";
 import {
   blackColor,
   dangerColor,
   primaryColor,
-  whiteColor,
+  whiteColor
 } from "../assets/colors";
 import { lato } from "../fonts";
 import { useNavigation } from "@react-navigation/native";
-import { AngleLeft, LogOutIcon, StarIcon } from "../assets/icons";
+import { AngleLeft, LogOutIcon, StarIcon, UserVerified } from "../assets/icons";
 import { NavNames, padding, profileLinks } from "../data/general";
 import { MaleAvatarOne } from "../assets/images";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { FlatList } from "react-native";
+
+const ProfileSection = ({ children, title, icon }) => {
+  return (
+    <View
+      style={{
+        gap: 10
+      }}
+    >
+      <View
+        style={{
+          borderBottomWidth: 1,
+          borderBottomColor: blackColor.opacity100,
+          paddingVertical: 15,
+          flexDirection: "row",
+          alignItems: "center",
+          gap: 15
+        }}
+      >
+        {icon ? icon : <UserVerified />}
+        <Text
+          style={{
+            fontFamily: lato.bold.default,
+            color: primaryColor.default
+          }}
+        >
+          {title}
+        </Text>
+      </View>
+
+      <View stye={{ gap: 15 }}>
+        {children}
+      </View>
+    </View>
+  );
+};
 
 const Header = () => {
   const { goBack } = useNavigation();
@@ -39,7 +74,7 @@ const Header = () => {
         gap: 10,
         paddingHorizontal: padding,
         paddingVertical: 15,
-        alignItems: "center",
+        alignItems: "center"
       }}
     >
       <TouchableOpacity
@@ -53,7 +88,7 @@ const Header = () => {
       <Text
         style={{
           fontSize: 18,
-          fontFamily: lato.bold.default,
+          fontFamily: lato.bold.default
         }}
       >
         My Account
@@ -69,163 +104,57 @@ const Profile = () => {
     {
       stat: "3,251",
       label: "Trips",
-      action: () => navigate(NavNames.History.name),
+      action: () => navigate(NavNames.History.name)
     },
 
     {
       stat: "4.90",
       label: "Ratings",
-      action: () => navigate(NavNames.Rating.name),
+      action: () => navigate(NavNames.Rating.name)
     },
 
     {
       stat: "2",
-      label: "Months",
-    },
+      label: "Months"
+    }
   ];
 
   return (
     <LoggedInContainer removeSafeView header={<Header />} navHidden>
       <View
         style={{
-          flex: 1,
+          flex: 1
         }}
       >
         <ScrollView
           showsVerticalScrollIndicator={false}
           contentContainerStyle={{
-            gap: 28,
+            gap: 28
           }}
         >
-          <View
-            style={{
-              alignItems: "center",
-              marginTop: 20,
-              gap: 10,
-            }}
-          >
-            <RoundedImage
-              imagePadding={3}
-              size={70}
-              imageParentBackground={blackColor.opacity100}
-              image={MaleAvatarOne}
+          <ProfileSection title="Account">
+            <ProfileRoute
+              title="Edit Profile"
+              name={NavNames.EditProfile.name}
             />
-
-            <Text
-              style={{
-                fontFamily: lato.bold.default,
-                color: blackColor.opacity600,
-                fontSize: 18,
-                textAlign: "center",
-              }}
-            >
-              John Doe
-            </Text>
-
-            <Text
-              style={{
-                fontFamily: lato.regular.default,
-                color: blackColor.opacity500,
-                fontSize: 13,
-                textAlign: "center",
-              }}
-            >
-              +(234) 903-366-4645
-            </Text>
-
-            <View
-              style={{
-                flexDirection: "row",
-                alignItems: "center",
-                gap: 3,
-              }}
-            >
-              <StarIcon set="bold" color={"#FFCC00"} />
-
-              <Text
-                style={{
-                  fontFamily: lato.regular.default,
-                  color: blackColor.opacity500,
-                  fontSize: 13,
-                  textAlign: "center",
-                }}
-              >
-                4.9
-              </Text>
-            </View>
-          </View>
-
-          <View
-            style={{
-              gap: 28,
-            }}
-          >
-            <View
-              style={{
-                alignItems: "center",
-              }}
-            >
-              <Stats
-                stats={stats}
-                style={{
-                  shadowColor: blackColor.opacity500,
-                  borderColor: "rgba(0, 0, 0, .01)",
-                }}
-              />
-            </View>
-
-            <View
-              style={{
-                gap: 20,
-              }}
-            >
-              {/* <ProfileDetailsCard
-                title="Member since"
-                value="February 15, 2023"
-              />
-              <ProfileDetailsCard
-                title="Car Model"
-                value="Mercedes-Benz E-Class"
-              />
-              <ProfileDetailsCard
-                title="Car Model"
-                value="Mercedes-Benz E-Class"
-              /> */}
-            </View>
-
-            <View
-              style={{
-                paddingTop: 10,
-                gap: 12,
-              }}
-            >
-              <Text
-                style={{
-                  fontFamily: lato.bold.default,
-                  fontSize: 15,
-                }}
-              >
-                Account Settings
-              </Text>
-
-              {profileLinks.map(({ Icon, label, name }, index) => (
-                <ProfileRoute
-                  label={label}
-                  name={name}
-                  key={index}
-                  icon={
-                    <Icon color={primaryColor.default} set="bold" size={25} />
-                  }
-                />
-              ))}
-            </View>
-          </View>
+            <ProfileRoute
+              title="Change Password"
+              name={NavNames.ChangePassword.name}
+            />
+            <ProfileRoute
+              title="Saved Address"
+              name={NavNames.SavedDestinations.name}
+            />
+          </ProfileSection>
+          <ProfileSection title="Security">
+            <ProfileRoute title="Password Reset" />
+          </ProfileSection>
         </ScrollView>
       </View>
       <View
         style={{
           alignItems: "center",
-          paddingVertical: 20,
+          paddingVertical: 20
         }}
       >
         <TouchableOpacity
@@ -236,7 +165,7 @@ const Profile = () => {
             borderRadius: 10,
             flexDirection: "row",
             alignItems: "center",
-            gap: 10,
+            gap: 10
           }}
           onPress={() => {
             navigate(NavNames.Login.name);
@@ -244,7 +173,7 @@ const Profile = () => {
         >
           <Text
             style={{
-              fontFamily: lato.bold.default,
+              fontFamily: lato.bold.default
             }}
           >
             Log out
@@ -261,15 +190,15 @@ export default Profile;
 
 const styles = StyleSheet.create({
   contentTitleStyle: {
-    fontFamily: lato.bold.default,
+    fontFamily: lato.bold.default
   },
   contentValueStyle: {
     fontFamily: lato.regular.default,
-    color: blackColor.opacity500,
+    color: blackColor.opacity500
   },
   accountContentStyle: {
     flexDirection: "row",
     gap: 5,
-    justifyContent: "space-between",
-  },
+    justifyContent: "space-between"
+  }
 });
