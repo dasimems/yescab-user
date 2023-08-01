@@ -124,6 +124,12 @@ export const NavNames = {
     navShown: false,
     Icon: ChatIcon
   },
+  Schedules: {
+    name: "Schedules",
+    label: "Schedules",
+    navShown: false,
+    Icon: ChatIcon
+  },
   // Settings: {
   //   name: "Settings",
   //   label: "Settings",

@@ -23,6 +23,7 @@ import AddAddress from "./AddAddress";
 import SelectDestination from "./SelectDestination";
 import SavedDestinations from "./SavedDestinations";
 import ScheduleRide from "./ScheduleRide";
+import Schedules from "./Schedules";
 
 export {
   GettingStarted,
@@ -49,5 +50,6 @@ export {
   AddAddress,
   SelectDestination,
   SavedDestinations,
-  ScheduleRide
+  ScheduleRide,
+  Schedules
 };

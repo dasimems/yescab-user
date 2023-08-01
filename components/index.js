@@ -33,6 +33,7 @@ import ProfileHeader from "./profile/inner/Header";
 import RatingBar from "./profile/inner/ratings/RatingBar";
 import ReviewCard from "./profile/inner/ratings/ReviewCard";
 import ReviewList from "./profile/inner/ratings/ReviewList";
+import ScheduleCard from "./schedules/ScheduleCard";
 import TripCard from "./trips/TripCard";
 import TripFilter from "./trips/TripFilter";
 import VehicleTypeCard from "./vehicle-type/VehicleTypeCard";
@@ -81,5 +82,6 @@ export {
   SearchDestination,
   CarSelect,
   CarSelectCard,
-  RideBooked
+  RideBooked,
+  ScheduleCard
 };
